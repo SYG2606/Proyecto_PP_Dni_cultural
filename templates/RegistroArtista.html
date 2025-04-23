@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/codoAcodo.ico" type="image/x-icon">
+    <title>Registro del Artista</title>
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="stylesRegistro.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="../logo_sgo.png" alt="Logo Santiago del Estero">
+        </div>
+        <nav>
+            <ul>
+                <li><a class="menu" href="/Index.html">Inicio 🏠</a></li>
+                <li><a class="menu" href="/templates/BusquedaArtistas.html">Búsqueda Por Artista 🔍</a></li>
+                <li><a class="menu" href="/templates/RegistroArtista.html">Registrarse 📝</a></li>
+                <li><a class="menu" href="/templates/formulario.html">Ingreso✅</a></li>
+                <li><a class="menu" href="/templates/wiki.html">Biblioteca 📚</a></li>
+              </ul>
+        </nav>
+      </header>
+    <main>
+        <form action="https://formspree.io/f/mrgwpnnn" method="post" enctype="multipart/form-data">
+            <!-- Sección: Datos Personales -->
+            <fieldset>
+                <legend>Datos Personales 👤</legend>
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" required>
+        
+                <label for="apellido">Apellido:</label>
+                <input type="text" name="apellido" id="apellido" required>
+        
+                <label for="telefono">Teléfono 📞:</label>
+                <input type="tel" name="telefono" id="telefono" required>
+        
+                <label for="email">Correo Electrónico 📧:</label>
+                <input type="email" name="email" id="email" required>
+        
+                <!-- Nueva sección: Dirección -->
+                <label for="direccion">Dirección 🏠:</label>
+                <input type="text" name="direccion" id="direccion" required placeholder="Ingrese su dirección">
+        
+                <!-- Nueva sección: Referencias académicas -->
+                <label for="referencias_academicas">Referencias Académicas o Artísticas 📜:</label>
+                <textarea name="referencias_academicas" id="referencias_academicas" cols="30" rows="3" placeholder="Escriba las referencias académicas o artísticas relevantes (por ejemplo, estudios, reconocimientos, participaciones en eventos, etc.)"></textarea>
+            </fieldset>
+        
+            <!-- Sección: Información Artística -->
+            <fieldset>
+                <legend>Información Artística 🎨</legend>
+                <label for="genero">Seleccione un género:</label>
+                <select name="genero" id="genero">
+                    <option value="M">Masculino 👨</option>
+                    <option value="F">Femenino 👩</option>
+                    <option value="Otro">Otro 🔀</option>
+                </select>
+        
+                <label>Área que se desempeña 🎭:</label>
+                <div class="area-options">
+                    <label><input type="radio" name="area" value="Artesanía"> Artesanía 🎨</label>
+                    <label><input type="radio" name="area" value="Audiovisual"> Audiovisual 🎬</label>
+                    <label><input type="radio" name="area" value="Danza"> Danza 💃</label>
+                    <label><input type="radio" name="area" value="Teatro"> Teatro 🎭</label>
+                    <label><input type="radio" name="area" value="Música"> Música 🎶</label>
+                    <label><input type="radio" name="area" value="Literatura"> Literatura 📚</label>
+                    <label><input type="radio" name="area" value="Fotografía"> Fotografía 📸</label>
+                    <label><input type="radio" name="area" value="Escultura"> Escultura 🗿</label>
+                </div>
+        
+                <label for="comentario">Explique brevemente las actividades que desarrolla dentro de su disciplina:</label>
+                <textarea name="comentario" id="comentario" cols="30" rows="5" placeholder="Escriba aquí"></textarea>
+            </fieldset>
+        
+            <!-- Sección: Carga de Imágenes -->
+            <fieldset>
+                <legend>Carga Multimedia de Obras 🖼️</legend>
+                <label for="obra1">URL de Imagen/Video:</label>
+                <input type="url"  name="obra1" id="obra1" accept="image/*">
+        
+                <label for="obra2">URL de Imagen/Video:</label>
+                <input type="url"  name="obra2" id="obra2" accept="image/*">
+        
+                <label for="obra3">URL de Imagen/Video:</label>
+                <input type="url"  name="obra3" id="obra3" accept="image/*">
+
+            </fieldset>
+        
+            <!-- Sección: Contacto y Redes Sociales -->
+            <fieldset>
+                <legend>Contacto y Redes Sociales 🌐</legend>
+                <label for="pagina_web">Página Web 🌍:</label>
+                <input type="url" name="pagina_web" id="pagina_web" placeholder="Ingrese la dirección">
+        
+                <label for="redes_sociales1">Red Social 1 📱:</label>
+                <input type="url" name="redes_sociales1" id="redes_sociales1" placeholder="Ingrese la dirección">
+        
+                <label for="redes_sociales2">Red Social 2 📱:</label>
+                <input type="url" name="redes_sociales2" id="redes_sociales2" placeholder="Ingrese la dirección">
+        
+                <label for="observaciones">Observaciones o Aclaraciones 📝:</label>
+                <textarea name="observaciones" id="observaciones" cols="30" rows="5" placeholder="Escriba aquí"></textarea>
+            </fieldset>
+        
+            <!-- Botones -->
+            <div class="buttons">
+                <input type="submit" value="Enviar ✉️">
+                <input type="reset" value="Borrar 🧹">
+            </div>
+        </form>
+        
+    </main>
+
+    <footer>
+        <p>© 2024 DNI Cultural | Todos los derechos reservados 📜</p>
+    </footer>
+</body>
+
+</html>
