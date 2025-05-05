@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login - DNI Cultural</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo_sgo.png" alt="Logo Santiago del Estero"/>
+    </div>
+  </header>
+
+  <main>
+    <h2>Iniciar sesión</h2>
+    
+    <p><strong>Usuario válido:</strong> admin</p>
+    <p><strong>Contraseña válida:</strong> 1234</p>
+
+    <form>
+      <label for="usuario">Usuario:</label><br>
+      <input type="text" id="usuario" name="usuario" required><br><br>
+
+      <label for="clave">Contraseña:</label><br>
+      <input type="password" id="clave" name="clave" required><br><br>
+
+      <!-- Simular login correcto -->
+      <a href="dashboard.html"><input type="button" value="Ingresar como ADMIN"></a>
+
+      <!-- Simular login incorrecto -->
+      <a href="verificar_login.html"><input type="button" value="Ingresar con error"></a>
+    </form>
+  </main>
+
+  <footer>
+    <p>© 2025 DNI Cultural | Todos los derechos reservados 📜</p>
+  </footer>
+</body>
+</html>
+

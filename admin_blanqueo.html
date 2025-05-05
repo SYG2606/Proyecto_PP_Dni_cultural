@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blanque de Clave</title>
+</head>
+<body>
+    <h2>Administrar claves de usuarios</h2>
+    <form id="formBlanqueo">
+      <select id="usuario">
+        <option value="usuario1">usuario1</option>
+        <option value="usuario2">usuario2</option>
+      </select>
+      <button type="submit">Blanquear clave</button>
+    </form>
+  
+    <script>
+      document.getElementById("formBlanqueo").addEventListener("submit", function(e) {
+        e.preventDefault();
+        alert("Clave blanqueada (clave temporal enviada por correo) - simulado");
+      });
+    </script>
+  </body>
+</html>
