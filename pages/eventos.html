@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eventos Culturales</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="eventos.css" />
+
+    <!-- FullCalendar CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+        <div class="logo">
+            <img src="../logo_sgo.png" alt="Logo Santiago del Estero">
+        </div>
+        <nav>
+            <ul>
+                <li><a class="menu" href="/Index.html">Inicio 🏠</a></li>
+                <li><a class="menu" href="/templates/BusquedaArtistas.html">Búsqueda Por Artista 🔍</a></li>
+                <li><a class="menu" href="/templates/RegistroArtista.html">Registrarse 📝</a></li>
+                <li><a class="menu" href="/templates/wiki.html">Biblioteca 📚</a></li>
+                <li><a class="menu" href="/templates/formulario.html">Validacion ✅</a></li>
+                <li><a class="menu" href="/templates/eventos.html">Eventos 🎭</a></li>
+            </ul>
+        </nav>
+      </header>
+
+    <main>
+      <section>
+        <h1>Eventos Culturales</h1>
+        <p>Aquí podrás encontrar los eventos destacados de Santiago del Estero y un calendario interactivo.</p>
+      </section>
+
+      <!-- Lista de eventos destacados -->
+      <section id="eventos-destacados">
+        <h2>Eventos Destacados</h2>
+        <ul>
+          <li><strong>Festival de Folclore</strong>: 20 de Noviembre, Plaza Principal.</li>
+          <li><strong>Exposición de Arte Contemporáneo</strong>: 25 de Noviembre, Casa Castro.</li>
+          <li><strong>Teatro Infantil</strong>: 30 de Noviembre, Teatro 25 de Mayo.</li>
+        </ul>
+      </section>
+
+      <!-- Calendario -->
+    </main>
+
+    <footer>
+      <p>© 2024 DNI Cultural | Todos los derechos reservados 📜</p>
+    </footer>
+
+    <!-- FullCalendar JS -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const calendarEl = document.getElementById('calendar');
+        const calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth',
+          locale: 'es',
+          events: [
+            {
+              title: 'Festival de Folclore',
+              start: '2024-11-20',
+              description: 'En la Plaza Principal de Santiago del Estero.',
+            },
+            {
+              title: 'Exposición de Arte',
+              start: '2024-11-25',
+              description: 'Casa Castro, entrada gratuita.',
+            },
+            {
+              title: 'Teatro Infantil',
+              start: '2024-11-30',
+              description: 'Teatro 25 de Mayo, entradas desde $500.',
+            },
+          ],
+          eventClick: function (info) {
+            alert(
+              `Evento: ${info.event.title}\nFecha: ${info.event.start.toLocaleDateString()}\nDescripción: ${info.event.extendedProps.description}`
+            );
+          },
+        });
+        calendar.render();
+      });
+    </script>
+  </body>
+</html>

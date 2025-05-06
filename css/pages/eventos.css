@@ -1,0 +1,72 @@
+
+
+/* Sección de eventos destacados */
+#eventos-destacados {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff; /* Fondo blanco para destacarlo */
+    border: 1px solid #E5E7EB; /* Borde gris claro */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+#eventos-destacados ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#eventos-destacados ul li {
+    font-size: 16px;
+    color: #333333; /* Texto gris oscuro */
+    padding: 8px 0;
+    border-bottom: 1px solid #E5E7EB; /* Línea divisoria entre eventos */
+}
+
+#eventos-destacados ul li:last-child {
+    border-bottom: none; /* Quitar la línea al final */
+}
+
+#eventos-destacados ul li strong {
+    color: #D50032; /* Resaltar el nombre del evento */
+}
+
+/* Calendario interactivo */
+#calendario {
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #E5E7EB;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#calendar {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Botones y eventos del calendario */
+.fc-toolbar-title {
+    font-size: 20px;
+    color: #D50032;
+    font-weight: bold;
+}
+
+.fc-button {
+    background-color: #D50032;
+    border: none;
+    color: #FFFFFF;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.fc-button:hover {
+    background-color: #006D8E; /* Azul para hover */
+}
+
+.fc-event {
+    background-color: #0075c4; /* Azul para los eventos */
+}

@@ -1,0 +1,130 @@
+
+/* Estilos principales */
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px; /* Radio de borde ligeramente mayor */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+}
+
+/* Contenedor de búsqueda */
+.search-container {
+    background-color: white;
+    padding: 25px; /* Más espacio interno para mejorar la apariencia */
+    border-radius: 8px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+    margin-bottom: 30px; /* Más separación entre elementos */
+}
+
+.search-container form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px; /* Mayor espacio entre los campos */
+}
+
+label {
+    font-size: 1rem;
+    color: #333;
+}
+
+input[type="text"], input[type="number"], select {
+    padding: 12px; /* Aumentamos el padding para mayor comodidad */
+    font-size: 1rem;
+    border-radius: 6px; /* Bordes más redondeados */
+    border: 1px solid #ddd; /* Mantiene el borde neutro */
+    width: 100%;
+    box-sizing: border-box;
+    transition: border 0.3s ease; /* Transición suave para cuando el campo tiene foco */
+}
+
+input[type="text"]:focus, input[type="number"]:focus, select:focus {
+    border-color: #00579B; /* Resalta el borde al hacer foco */
+}
+
+input[type="checkbox"] {
+    transform: scale(1.3); /* Tamaño de checkbox ligeramente mayor */
+    margin-top: 12px; /* Más espacio entre el checkbox y el label */
+}
+
+/* Formulario - Fieldset */
+fieldset {
+    border: 2px solid #ddd;
+    padding: 20px; /* Mayor espacio dentro del fieldset */
+    margin-bottom: 25px; /* Más espacio entre fieldset */
+    border-radius: 8px;
+    background-color: #fafafa; /* Fondo suave en el fieldset */
+}
+
+legend {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    padding: 5px 10px;
+    background-color: #00579B;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Fieldset labels */
+fieldset label {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 12px; /* Mayor espacio entre las etiquetas */
+}
+
+fieldset label input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Botón de búsqueda */
+button[type="submit"] {
+    background-color: #00579B; /* Color similar al de tu segundo bloque */
+    color: white;
+    padding: 14px 22px; /* Aumento del padding para mejorar el tamaño */
+    border: none;
+    border-radius: 6px; /* Bordes más redondeados */
+    cursor: pointer;
+    font-size: 1.1rem; /* Aumentamos el tamaño de la fuente */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button[type="submit"]:hover {
+    background-color: #004080;
+}
+
+/* Resultados de búsqueda */
+#search-results {
+    background-color: white;
+    padding: 25px; /* Más espacio interno para los resultados */
+    border-radius: 8px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+#search-results h2 {
+    text-align: center;
+    color: #333;
+}
+
+#results-list {
+    margin-top: 25px; /* Más espacio entre el título y los resultados */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .search-container form {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 12px;
+    }
+}

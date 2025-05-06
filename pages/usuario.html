@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard del Artista</title>
+    <link rel="stylesheet" href="/styles.css"> <!-- Asegúrate de que este archivo exista y contenga el estilo base -->
+    <link rel="stylesheet" href="usuario.css"> <!-- Asegúrate de que este archivo exista y contenga el estilo base -->
+
+</head>
+<body>
+    <!-- Header: Barra de Navegación -->
+    <header>
+        <div class="logo">
+            <img src="../logo_sgo.png" alt="Logo Santiago del Estero">
+        </div>
+        <nav>
+            <ul>
+                <li><a class="menu" href="/Index.html">Inicio 🏠</a></li>
+                <li><a class="menu" href="/templates/BusquedaArtistas.html">Búsqueda Por Artista 🔍</a></li>
+                <li><a class="menu" href="/templates/RegistroArtista.html">Registrarse 📝</a></li>
+                <li><a class="menu" href="/templates/formulario.html">Ingreso✅</a></li>
+                <li><a class="menu" href="/templates/wiki.html">Biblioteca 📚</a></li>
+              </ul>
+        </nav>
+      </header>
+
+<div class="container">
+    <h2>Tu Información</h2>
+
+    <p><strong>Nombre:</strong> Juan Pérez</p>
+    <p><strong>Nombre artístico:</strong> Juanito</p>
+    
+    <div class="status">
+        <p><strong>Estado de Validación:</strong> En proceso</p>
+    </div>
+
+    <h3>Actualizar Información</h3>
+    <form class="update-form" action="#" method="POST">
+        <label for="bio">Biografía:</label>
+        <textarea name="bio" id="bio" rows="4" placeholder="Escribe tu biografía aquí..."></textarea>
+
+        <label for="contact">Contacto:</label>
+        <input type="text" name="contact" id="contact" placeholder="Escribe tu contacto...">
+
+        <button type="submit">Actualizar Información</button>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2024 Proyecto DNI Cultural - Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>

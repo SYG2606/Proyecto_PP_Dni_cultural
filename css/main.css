@@ -8,9 +8,10 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-header .logo img {
-    width: 120px;
-    height: auto;
+.logo img {
+  width: 120px;
+  height: auto;
+  display: block;
 }
 
 nav ul {
