@@ -7,4 +7,4 @@ async function includeHTML(id, file) {
     }
   }
 
-  includeHTML("header", "components/header.html");
+  includeHTML("navbar", "/src/views/pages/public/components/navbar.html");

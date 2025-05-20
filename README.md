@@ -40,3 +40,12 @@ DNI_Cultural/
 1. Clonar el repositorio:
    ```bash
    git clone https://github.com/usuario/DNI_Cultural.git
+
+## 📝 Autores
+
+Integrantes del grupo Runatech
+
+ITSE Santiago del Estero
+
+## 📚 Licencia
+Este proyecto fue desarrollado con fines educativos. Todos los derechos reservados a sus autores y la Subsecretaría de Cultura de Santiago del Estero.
