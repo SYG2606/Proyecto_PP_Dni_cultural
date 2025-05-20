@@ -1,51 +1,94 @@
-# 🪪 DNI Cultural - Registro de Artistas de Santiago del Estero
+# 🎭 DNI Cultural
 
-Este proyecto es una plataforma web que permite registrar, consultar y validar información sobre artistas de Santiago del Estero. Desarrollado como trabajo de Práctica Profesionalizante para el ITSE.
+Proyecto desarrollado para la Subsecretaría de Cultura de Santiago del Estero como parte de las Prácticas Profesionalizantes del ITSE.
 
-## 📌 Funcionalidades
+---
 
-- Registro de artistas locales con datos personales y obras.
-- Validación manual por parte de la Subsecretaría de Cultura.
-- Visualización pública tipo Wikipedia con filtros por género, localidad, tipo de arte, etc.
-- Panel de administración para usuarios validados.
-- Panel público con buscador de artistas y obras.
-- Biblioteca digital con recursos culturales.
-- Generación de estadísticas (ej: porcentaje de artistas mujeres).
+## 📚 Descripción
 
-## 👥 Roles de Usuario
+**DNI Cultural** es una plataforma web tipo "Wikipedia local", destinada a registrar, validar y consultar información sobre artistas de Santiago del Estero. El sistema permite cargar obras, gestionar solicitudes de validación.
 
-- **Artista**: se registra y carga información de su perfil.
-- **Administrador**: valida registros y gestiona contenidos.
-- **Visitante**: puede buscar y consultar artistas validados.
+---
 
-## 📂 Estructura del Proyecto
+## 🗂️ Estructura del Proyecto
 
 DNI_Cultural/
-├── src/ # Lógica de negocio (MVC)
-├── static/ # Archivos estáticos (CSS, JS, imágenes)
-├── database/ # Scripts de base de datos
-├── config/ # Archivos de configuración
-├── docs/ # Manuales e informes del proyecto
-└── README.md # Este archivo
+│
+├── src/
+│   ├── controllers/       # Lógica del sistema y gestión de rutas
+│   ├── models/            # Representación de datos
+│   └── views/             # Interfaz HTML
+│       ├── components/    # Navbar, footer, etc.
+│       └── pages/
+│           ├── public/    # Inicio, búsqueda, eventos
+│           ├── auth/      # Login, registro
+│           ├── user/      # Panel de artistas
+│           └── admin/     # Administración del sistema
+│
+├── static/
+│   ├── css/
+│   │   └── main.css       # Estilos generales
+│   │   └── login.css      # Estilos por página
+│   │   └── admin.css
+│   │   └── wiki.css
+│   ├── js/
+│   │   └── login.js
+│   │   └── admin.js
+│   └── img/
+│       └── logo.png
+│
+├── database/
+│   └── esquema.sql
+│   └── datos-ejemplo.sql
+│
+├── config/
+│   └── db.php             # Conexión a base de datos
+│   └── rutas.php
+│
+├── tests/
+│   └── test-usuarios.js
+│   └── test-artistas.js
+│
+└── docs/
+    └── manual-usuario.pdf
+    └── informe-tecnico.docx
+```
 
-## 🛠️ Tecnologías Utilizadas
+---
 
-- **Frontend**: HTML5, CSS3, JavaScript
-- **Backend**: PHP / Node.js 
-- **Base de Datos**: MariaDB / MySQL
-- **Diseño**: Patrón MVC
+## ⚙️ Tecnologías Utilizadas
 
-## 🧑‍💻 Instalación y Uso
+- HTML5, CSS3, JavaScript
+- PHP o Node.js
+- MySQL / MariaDB
+- Bootstrap o TailwindCSS
+- XAMPP/WAMP o servidor local
 
-1. Clonar el repositorio:
-   ```bash
-   git clone https://github.com/usuario/DNI_Cultural.git
+---
 
-## 📝 Autores
+## ✅ Funcionalidades Clave
 
-Integrantes del grupo Runatech
+- Registro y autenticación de artistas
+- Validación manual por administradores
+- Carga de obras, eventos y biografías
+- Buscador avanzado con filtros por género, localidad, tipo, año
+- Biblioteca digital con contenido de artistas
+- Panel de usuario (artista) y panel de administración
 
-ITSE Santiago del Estero
+---
 
-## 📚 Licencia
-Este proyecto fue desarrollado con fines educativos. Todos los derechos reservados a sus autores y la Subsecretaría de Cultura de Santiago del Estero.
+## 👥 Equipo de Desarrollo
+
+**Runatech** - Estudiantes del ITSE Santiago del Estero
+
+- Maximiliano Fabián Padilla
+- Marcos Ariel Romano
+- Mario Sebastián Ruiz
+
+Colaboración: Subsecretaría de Cultura de Santiago del Estero
+
+---
+
+## 📄 Licencia
+
+Este proyecto fue realizado con fines educativos. Derechos reservados al equipo Runatech y a la Subsecretaría de Cultura.
