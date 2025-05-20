@@ -1,4 +1,4 @@
-# 🎭 DNI Cultural
+## 🎭 DNI Cultural
 
 Proyecto desarrollado para la Subsecretaría de Cultura de Santiago del Estero como parte de las Prácticas Profesionalizantes del ITSE.
 
