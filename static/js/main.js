@@ -8,3 +8,4 @@ async function includeHTML(id, file) {
   }
 
   includeHTML("navbar", "/src/views/pages/public/components/navbar.html");
+  includeHTML("footer", "/src/views/pages/public/components/footer.html");
