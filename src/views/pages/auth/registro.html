@@ -30,7 +30,7 @@
     </div>
 </section>
 
-<section class="formulario-paso1">
+<section id="paso1" class="formulario-paso1 active">
     <h2>Creá tu cuenta</h2>
     <form id="registroForm">
 
@@ -116,7 +116,7 @@
     </form>
 </section>
 
-<section class="formulario-paso2">
+<section id="paso2" class="formulario-paso2">
     <h2>Intereses culturales</h2>
     <p>¿En qué categoría artística te desarrollás actualmente? Seleccioná una o más áreas que mejor representen tu producción o actividad cultural dentro de Santiago del Estero. Estas categorías responden a los ejes trabajados por la Subsecretaría de Cultura.</p>
 
@@ -137,7 +137,7 @@
         </div>
 
         <div class="botones-navegacion">
-            <button type="button" onclick="volverPaso1()" class="btn-secundario">Anterior</button>
+            <button type="button" onclick="volverPaso1()" class="btn-secundario" id="btn-anterior">Anterior</button>
             <button type="submit" class="btn-principal" id="btnSiguiente" disabled>Siguiente</button>
         </div>
     </form>

@@ -59,3 +59,57 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         e.target.value = input;
     });
+
+function mostrarPaso1() {
+    document.getElementById('paso1').classList.add('active');
+    document.getElementById('paso2').classList.remove('active');
+}
+
+function mostrarPaso2() {
+    document.getElementById('paso1').classList.remove('active');
+    document.getElementById('paso2').classList.add('active');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const checkboxes = document.querySelectorAll('input[name="intereses"]');
+    const btnSiguiente = document.getElementById('btnSiguiente');
+
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            const algunoMarcado = Array.from(checkboxes).some(c => c.checked);
+            btnSiguiente.disabled = !algunoMarcado;
+        });
+    });
+
+    document.getElementById('interesesForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert("Formulario completado. Gracias por registrarte en el DNI Cultural.");
+        // enviar datos al backend aquí si querés
+    });
+
+    // Al enviar el formulario de paso 1, pasamos a paso 2
+    document.getElementById('registroForm').addEventListener('submit', (e) => {
+        e.preventDefault(); // evitamos que recargue
+        mostrarPaso2();
+    });
+
+    // Inicializar mostrando solo el paso 1
+    mostrarPaso1();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const paso1 = document.querySelector(".formulario-paso1");
+    const paso2 = document.querySelector(".formulario-paso2");
+    const btnSiguiente = document.getElementById("btn-siguiente");
+    const btnAnterior = document.getElementById("btn-anterior");
+
+    btnSiguiente.addEventListener("click", function () {
+        paso1.classList.remove("active");
+        paso2.classList.add("active");
+    });
+
+    btnAnterior.addEventListener("click", function () {
+        paso2.classList.remove("active");
+        paso1.classList.add("active");
+    });
+});
