@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>ABM Usuarios - DNI Cultural</title>
+   <link rel="stylesheet" href="../../../../static/css/main.css" />
+</head>
+<body>
+ <header div class="logo">
+      <img src="../../../../static/img/logo_sgo.png" alt="Logo Santiago del Estero" />
+    </div>
+     <nav>
+      <ul>
+        <li><a class="menu" href="../user/dashboard-usuario.html">Volver🏠</a></li>
+       
+      </ul>
+    </nav>
+
+</header>
+  <main>
+    <h2>Gestión de Usuarios</h2>
+    <form>
+      <label>Nombre:</label><br>
+      <input type="text"><br>
+      <label>Correo:</label><br>
+      <input type="email"><br>
+      <label>Rol:</label><br>
+      <select>
+        <option>Validador</option>
+        <option>Administrador</option>
+      </select><br><br>
+      <input type="submit" value="Agregar Usuario">
+    </form>
+
+    <h3>Usuarios Registrados</h3>
+    <table border="1">
+      <tr><th>Nombre</th><th>Correo</th><th>Rol</th><th>Acciones</th></tr>
+      <tr><td>María</td><td>maria@gmail.com</td><td>Validador</td><td>Editar / Eliminar</td></tr>
+    </table>
+  </main>
+  <footer>
+     <div id="footer"></div>
+
+  <script src="../../../../static/js/main.js"></script>
+  </footer>
+</body>
+</html>
