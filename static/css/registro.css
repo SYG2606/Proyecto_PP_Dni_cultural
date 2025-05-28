@@ -1,0 +1,123 @@
+/* Paso a paso del registro */
+.registro-wizard {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.wizard-pasos {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.paso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #777;
+}
+
+.paso .circulo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #D50032;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #D50032;
+}
+
+.paso.activo .circulo {
+    background-color: #D50032;
+    color: white;
+    border: none;
+}
+
+.paso p {
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.linea {
+    width: 40px;
+    height: 2px;
+    background-color: #D50032;
+}
+
+.formulario-paso1 {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fefefe;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.formulario-paso1 h2 {
+    text-align: center;
+    color: #D50032;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group select {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.checkbox-group a {
+    color: #3366cc;
+    text-decoration: none;
+}
+
+.checkbox-group a:hover {
+    text-decoration: underline;
+}
+
+.btn-principal {
+    background-color: #D50032;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.btn-principal:hover {
+    background-color: #b10029;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
