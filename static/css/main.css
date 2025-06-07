@@ -1,7 +1,6 @@
 /* Encabezado */
 header {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     background: #303030;
@@ -19,7 +18,6 @@ header {
 nav ul {
   list-style-type: none;
   display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 10px;
   margin: 0;
@@ -58,8 +56,6 @@ body {
 .hero {
     display: flex;
     align-items: center;
-    text-align: center;
-    flex-direction: column;
     justify-content: space-between;
     padding: 20px 40px;
     background: #ffffff;
