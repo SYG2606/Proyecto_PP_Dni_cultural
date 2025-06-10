@@ -1,26 +1,61 @@
-document.addEventListener('DOMContentLoaded', function () {
+// =======================
+// CONFIGURACIÓN INICIAL
+// =======================
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Mostrar el paso 1 al inicio
+    mostrarPaso1();
+
+    // Inicializar selects de país/provincia/municipio
+    inicializarUbicacion();
+
+    // Inicializar validación de fecha
+    inicializarFechaNacimiento();
+
+    // Inicializar validación de intereses
+    inicializarValidacionIntereses();
+
+    // Eventos de formulario
+    inicializarEventosFormularios();
+
+    // Botones navegación pasos
+    inicializarNavegacionPasos();
+});
+
+// =======================
+// UBICACIÓN DINÁMICA
+// =======================
+
+function inicializarUbicacion() {
     const provinciasPorPais = {
         Argentina: {
             "Buenos Aires": ["La Plata", "Mar del Plata", "Bahía Blanca"],
-            "Córdoba": ["Córdoba Capital", "Villa Carlos Paz", "Río Cuarto"],
-            "Santiago del Estero": ["Santiago Capital", "La Banda", "Termas de Río Hondo"]
-        }
+            Córdoba: ["Córdoba Capital", "Villa Carlos Paz", "Río Cuarto"],
+            "Santiago del Estero": [
+                "Santiago Capital",
+                "La Banda",
+                "Termas de Río Hondo",
+            ],
+        },
     };
 
-    const paisSelect = document.getElementById('pais');
-    const provinciaSelect = document.getElementById('provincia');
-    const municipioSelect = document.getElementById('municipio');
+    const paisSelect = document.getElementById("pais");
+    const provinciaSelect = document.getElementById("provincia");
+    const municipioSelect = document.getElementById("municipio");
 
-    paisSelect.addEventListener('change', function () {
+    paisSelect.addEventListener("change", function () {
         const pais = this.value;
-        provinciaSelect.innerHTML = '<option value="" disabled selected>Seleccioná una provincia</option>';
-        municipioSelect.innerHTML = '<option value="" disabled selected>Seleccioná un municipio</option>';
+
+        provinciaSelect.innerHTML =
+            '<option value="" disabled selected>Seleccioná una provincia</option>';
+        municipioSelect.innerHTML =
+            '<option value="" disabled selected>Seleccioná un municipio</option>';
         municipioSelect.disabled = true;
 
         if (provinciasPorPais[pais]) {
             provinciaSelect.disabled = false;
             Object.keys(provinciasPorPais[pais]).forEach(function (provincia) {
-                const option = document.createElement('option');
+                const option = document.createElement("option");
                 option.value = provincia;
                 option.textContent = provincia;
                 provinciaSelect.appendChild(option);
@@ -30,16 +65,17 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    provinciaSelect.addEventListener('change', function () {
+    provinciaSelect.addEventListener("change", function () {
         const pais = paisSelect.value;
         const provincia = this.value;
 
-        municipioSelect.innerHTML = '<option value="" disabled selected>Seleccioná un municipio</option>';
+        municipioSelect.innerHTML =
+            '<option value="" disabled selected>Seleccioná un municipio</option>';
 
         if (provinciasPorPais[pais] && provinciasPorPais[pais][provincia]) {
             municipioSelect.disabled = false;
             provinciasPorPais[pais][provincia].forEach(function (municipio) {
-                const option = document.createElement('option');
+                const option = document.createElement("option");
                 option.value = municipio;
                 option.textContent = municipio;
                 municipioSelect.appendChild(option);
@@ -48,68 +84,99 @@ document.addEventListener('DOMContentLoaded', function () {
             municipioSelect.disabled = true;
         }
     });
-});
-
-    document.getElementById('fechaNacimiento').addEventListener('input', function (e) {
-        let input = e.target.value.replace(/\D/g, '');
-        if (input.length >= 3 && input.length <= 4) {
-            input = input.slice(0, 2) + '/' + input.slice(2);
-        } else if (input.length > 4) {
-            input = input.slice(0, 2) + '/' + input.slice(2, 4) + '/' + input.slice(4, 8);
-        }
-        e.target.value = input;
-    });
-
-function mostrarPaso1() {
-    document.getElementById('paso1').classList.add('active');
-    document.getElementById('paso2').classList.remove('active');
 }
 
-function mostrarPaso2() {
-    document.getElementById('paso1').classList.remove('active');
-    document.getElementById('paso2').classList.add('active');
+// =======================
+// VALIDACIÓN DE FECHA
+// =======================
+
+function inicializarFechaNacimiento() {
+    const fechaInput = document.getElementById("fechaNacimiento");
+    const hoy = new Date().toISOString().split("T")[0];
+    const min = "1950-01-01";
+    fechaInput.setAttribute("min", min);
+    fechaInput.setAttribute("max", hoy);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+// =======================
+// VALIDACIÓN DE CONTRASEÑA/EMAIL
+// =======================
+
+
+
+// =======================
+// VALIDACIÓN DE INTERESES
+// =======================
+
+function inicializarValidacionIntereses() {
     const checkboxes = document.querySelectorAll('input[name="intereses"]');
-    const btnSiguiente = document.getElementById('btnSiguiente');
+    const btnSiguienteIntereses = document.getElementById("btnSiguiente");
 
-    checkboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', () => {
-            const algunoMarcado = Array.from(checkboxes).some(c => c.checked);
-            btnSiguiente.disabled = !algunoMarcado;
+    if (checkboxes.length && btnSiguienteIntereses) {
+        checkboxes.forEach((checkbox) => {
+            checkbox.addEventListener("change", () => {
+                const algunoMarcado = Array.from(checkboxes).some((c) => c.checked);
+                btnSiguienteIntereses.disabled = !algunoMarcado;
+            });
         });
-    });
+    }
+}
 
-    document.getElementById('interesesForm').addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert("Formulario completado. Gracias por registrarte en el DNI Cultural.");
-        // enviar datos al backend aquí si querés
-    });
+// =======================
+// EVENTOS DE FORMULARIOS
+// =======================
 
-    // Al enviar el formulario de paso 1, pasamos a paso 2
-    document.getElementById('registroForm').addEventListener('submit', (e) => {
-        e.preventDefault(); // evitamos que recargue
-        mostrarPaso2();
-    });
+function inicializarEventosFormularios() {
+    const interesesForm = document.getElementById("interesesForm");
+    const registroForm = document.getElementById("registroForm");
 
-    // Inicializar mostrando solo el paso 1
-    mostrarPaso1();
-});
+    if (registroForm) {
+        registroForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            mostrarPaso2();
+        });
+    }
 
-document.addEventListener("DOMContentLoaded", function () {
+    if (interesesForm) {
+        interesesForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            alert("Formulario completado. Gracias por registrarte en el DNI Cultural.");
+            // Aquí podrías enviar los datos al backend
+        });
+    }
+}
+
+// =======================
+// NAVEGACIÓN DE PASOS
+// =======================
+
+function inicializarNavegacionPasos() {
     const paso1 = document.querySelector(".formulario-paso1");
     const paso2 = document.querySelector(".formulario-paso2");
     const btnSiguiente = document.getElementById("btn-siguiente");
     const btnAnterior = document.getElementById("btn-anterior");
 
-    btnSiguiente.addEventListener("click", function () {
-        paso1.classList.remove("active");
-        paso2.classList.add("active");
-    });
+    if (btnSiguiente) {
+        btnSiguiente.addEventListener("click", function () {
+            paso1.classList.remove("active");
+            paso2.classList.add("active");
+        });
+    }
 
-    btnAnterior.addEventListener("click", function () {
-        paso2.classList.remove("active");
-        paso1.classList.add("active");
-    });
-});
+    if (btnAnterior) {
+        btnAnterior.addEventListener("click", function () {
+            paso2.classList.remove("active");
+            paso1.classList.add("active");
+        });
+    }
+}
+
+function mostrarPaso1() {
+    document.getElementById("paso1").classList.add("active");
+    document.getElementById("paso2").classList.remove("active");
+}
+
+function mostrarPaso2() {
+    document.getElementById("paso1").classList.remove("active");
+    document.getElementById("paso2").classList.add("active");
+}

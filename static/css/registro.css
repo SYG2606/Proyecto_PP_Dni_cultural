@@ -181,6 +181,15 @@
 }
 
 
+.formulario-paso2 {
+    display: none;
+}
+.formulario-paso2.active {
+    display: block;
+}
+input.error {
+    border: 2px solid red;
+}
 
 
 

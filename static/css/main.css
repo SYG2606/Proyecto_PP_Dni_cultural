@@ -9,9 +9,16 @@ header {
 }
 
 .logo img {
-  width: 120px;
+  width: 100px;
   height: auto;
-  display: block;
+  display: flex;
+}
+
+.title {
+    color: #ffffff;
+    font-size: 24px;
+    margin: 0;
+    font-weight: bold;
 }
 
 nav ul {
