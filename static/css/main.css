@@ -6,13 +6,28 @@ header {
     background: #303030;
     padding: 10px 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Se queda pegado al hacer scroll */
+    top: 0; /* Se queda arriba de todo */
+    z-index: 1000; /* Se asegura de estar por encima del contenido */
 }
+
+
+.container {
+    flex: 1; /* Hace que el contenedor ocupe el espacio disponible y empuje el footer hacia abajo */
+}
+
 
 .logo img {
   width: 100px;
   height: auto;
   display: block;
   margin-bottom: 10px;
+}
+
+nav {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul {
@@ -102,8 +117,8 @@ body {
 
 /* Pie de página */
 footer {
-    background-color: #303030;
-    color: #ffffff;
+  background-color: #1A535C;
+  color: #F7FFF7; 
     text-align: center;
     padding: 8px 0;
     margin-top: 0px;
