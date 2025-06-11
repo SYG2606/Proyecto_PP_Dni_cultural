@@ -92,7 +92,7 @@ input[type="submit"]:hover {
 }
 /* Pie de página */
 footer {
-    background-color: #303030;
+    background-color: #003366;
     color: #ffffff;
     text-align: center;
     padding: 8px 0;
@@ -125,6 +125,7 @@ footer p {
 .footer-links a:hover {
     text-decoration: underline;
 }
+
 
 @media (max-width: 400px) {
   form {

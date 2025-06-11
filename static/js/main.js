@@ -1,3 +1,26 @@
+// Función para incluir contenido HTML externo en un elemento con un ID específico
+async function includeHTML(id, file) {
+  const el = document.getElementById(id);
+  if (el) {
+    try {
+      const res = await fetch(file);
+      if (!res.ok) throw new Error("No se pudo cargar el archivo: " + file);
+      const html = await res.text();
+      el.innerHTML = html;
+    } catch (error) {
+      console.error("Error al incluir HTML:", error);
+    }
+  }
+}
+
+// Cuando el DOM esté listo, se carga el footer y otros componentes
+document.addEventListener("DOMContentLoaded", () => {
+  includeHTML("footer-container", "/src/views/pages/public/components/footer.html");
+
+  // Si querés usar también un navbar, descomentá la siguiente línea:
+  // includeHTML("navbar-container", "/src/views/pages/public/components/navbar.html");
+});
+
 async function includeHTML(id, file) {
     const el = document.getElementById(id);
     if (el) {
