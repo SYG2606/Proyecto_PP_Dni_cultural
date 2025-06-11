@@ -12,29 +12,25 @@
 
   <main>
     <h2>Iniciar sesión</h2>
-    
+
     <p><strong>Usuario válido:</strong> admin</p>
     <p><strong>Contraseña válida:</strong> 1234</p>
 
-    <form>
-      <label for="usuario">Usuario:</label><br>
-      <input type="text" id="usuario" name="usuario" required><br><br>
+    <form id="loginForm">
+      <label for="usuario">Usuario:</label>
+      <input type="text" id="usuario" name="usuario" required>
 
-      <label for="clave">Contraseña:</label><br>
-      <input type="password" id="clave" name="clave" required><br><br>
+      <label for="clave">Contraseña:</label>
+      <input type="password" id="clave" name="clave" required>
 
-      <!-- Simular login correcto -->
-      <a href="../user/dashboard-usuario.html"><input type="button" value="Ingresar como ADMIN"></a>
-
-      <!-- Simular login incorrecto -->
-      <a href="verificar_login.html"><input type="button" value="Ingresar con error"></a>
+      <input type="submit" value="Ingresar">
     </form>
+
+    <p id="mensaje-error" class="error-msg">Usuario o contraseña incorrectos.</p>
   </main>
 
-      <script src="/static/js/main.js"></script>
-
   <div id="footer"></div>
-  
+
+  <script src="/static/js/main.js"></script>
 </body>
 </html>
-
