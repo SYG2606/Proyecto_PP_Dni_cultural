@@ -1,4 +1,18 @@
-/* stylesValidacion.css */
+/* Header */
+header {
+  background-color: #003366;
+  color: white;
+  padding: 10px 20px;
+  overflow: hidden;
+}
+
+.logo {
+  float: left;
+}
+
+.logo img {
+  height: 50px;
+}
 
 /* Configuración básica */
 body {
@@ -59,4 +73,40 @@ main h1 {
 
 #login-form input[type="submit"]:hover {
     background-color: #45a049; /* Verde más oscuro al pasar el mouse */
+}
+
+/* Pie de página */
+footer {
+    background-color: #003366;
+    color: #ffffff;
+    text-align: center;
+    padding: 8px 0;
+    margin-top: 0px;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.footer-content h2 {
+    margin: 10px 0 5px;
+    font-size: 20px;
+}
+
+.footer-links {
+    margin: 10px 0;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
 }
