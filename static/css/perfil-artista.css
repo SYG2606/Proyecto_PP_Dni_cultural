@@ -1,19 +1,9 @@
 /* Encabezado */
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: linear-gradient(45deg, #D50032, #0075c4);
-    padding: 10px 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
 header .logo img {
     width: 120px;
     height: auto;
 }
-
-
 
 /* Estilos principales */
 main {
@@ -133,4 +123,35 @@ main {
     .artwork img {
         margin-bottom: 10px;
     }
+}
+.about-artist {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+}
+
+.about-artist h3,
+.portfolio-links h4 {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.portfolio-links ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.portfolio-links li {
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-links a {
+  text-decoration: none;
+  color: #0056b3;
+  font-weight: bold;
+}
+
+.portfolio-links a:hover {
+  text-decoration: underline;
 }
