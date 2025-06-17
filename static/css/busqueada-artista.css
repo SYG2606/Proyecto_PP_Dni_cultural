@@ -112,6 +112,42 @@ button[type="submit"]:hover {
     margin-top: 25px; /* Más espacio entre el título y los resultados */
 }
 
+footer {
+    background-color: #003366;
+    color: #ffffff;
+    text-align: center;
+    padding: 8px 0;
+    margin-top: 0px;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.footer-content h2 {
+    margin: 10px 0 5px;
+    font-size: 20px;
+}
+
+.footer-links {
+    margin: 10px 0;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+
 /* Estilos responsivos */
 @media (max-width: 768px) {
     .search-container form {

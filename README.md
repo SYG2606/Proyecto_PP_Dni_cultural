@@ -60,10 +60,6 @@ DNI_Cultural/
 ## ⚙️ Tecnologías Utilizadas
 
 - HTML5, CSS3, JavaScript
-- PHP o Node.js
-- MySQL / MariaDB
-- Bootstrap o TailwindCSS
-- XAMPP/WAMP o servidor local
 
 ---
 

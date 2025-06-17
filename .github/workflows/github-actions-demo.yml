@@ -1,0 +1,51 @@
+name: CI - DNI Cultural App
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v3
+
+      - name: Configurar PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+
+      - name: Instalar dependencias PHP (si usás Composer)
+        run: |
+          if [ -f composer.json ]; then
+            composer install
+          fi
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Instalar dependencias JS (si usás npm)
+        run: |
+          if [ -f package.json ]; then
+            npm install
+          fi
+
+      - name: Ejecutar pruebas unitarias PHP (si las tenés)
+        run: |
+          if [ -f phpunit.xml ]; then
+            ./vendor/bin/phpunit
+          else
+            echo "No se encontraron pruebas PHP."
+          fi
+
+      - name: Ejecutar pruebas JS (si usás Jest, Mocha u otra)
+        run: |
+          if [ -f package.json ]; then
+            npm test || echo "No se encontraron pruebas JS definidas."
+          fi

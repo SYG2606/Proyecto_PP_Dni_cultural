@@ -33,6 +33,12 @@ background: linear-gradient(to left, #C30135, #00A0E5);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+
+.container {
+    flex: 1; /* Hace que el contenedor ocupe el espacio disponible y empuje el footer hacia abajo */
+}
+
+
 .logo img {
   width: 100px;
   height: auto;
