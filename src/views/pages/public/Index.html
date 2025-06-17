@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>DNI Cultural</title>
 
-  <link rel="stylesheet" href="/static/css/normalice.css">
+  <title>DNI Cultural</title>
+  <link rel="stylesheet" href="/static/css/animate.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="/static/css/main.css" />
-  <link rel="stylesheet" href="/static/js/navbar.js" />
+
 </head>
 
 <body>
@@ -19,14 +19,14 @@
   <main>
     <section class="hero">
       <div class="hero-text">
-        <h1>Bienvenidos a ID Cultural</h1>
+        <h1 class="animate__animated animate__fadeInDown">Bienvenidos a ID Cultural</h1>
 
-        <p><strong>ID Cultural</strong> es una plataforma digital dedicada a visibilizar, preservar y promover la
+        <p class="animate__animated animate__fadeIn" style="animation-delay: 0.3s;"><strong>ID Cultural</strong> es una plataforma digital dedicada a visibilizar, preservar y promover la
           identidad artística y cultural de Santiago del Estero. Nuestro objetivo es ofrecer un espacio accesible y
           confiable donde se registre, documente y difunda la trayectoria de artistas locales, tanto actuales como
           históricos.</p>
 
-        <h2>¿Qué podés hacer en ID Cultural?</h2>
+        <h2 class="animate__animated animate__fadeInDown" >¿Qué podés hacer en ID Cultural?</h2>
         <ul>
           <li>Buscar artistas por nombre, disciplina, género o localidad.</li>
           <li>Explorar obras y eventos pasados.</li>
@@ -42,8 +42,8 @@
       </div>
       <div class="hero-image">
         <picture>
-            <source srcset="/static/img/casa-castro.jpg" type="image">
-            <img src="/static/img/casa-castro.jpg" alt="Casa Castro" loading="lazy" />
+          <source srcset="/static/img/casa-castro.jpg" type="image">
+          <img class="animate__animated animate__fadeIn" style="animation-delay: 0.6s;" src="/static/img/casa-castro.jpg" alt="Casa Castro" loading="lazy" />
         </picture>
       </div>
     </section>
@@ -53,7 +53,7 @@
 
   <script src="/static/js/main.js"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
-
+  <script src="/static/js/navbar.js"></script>
 
 </body>
 
