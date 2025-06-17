@@ -23,8 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
     inicializarNavegacionPasos();
 });
 
-=======
-document.addEventListener('DOMContentLoaded', function () {
   const provinciasPorPais = {
     Argentina: {
       "Buenos Aires": ["La Plata", "Mar del Plata", "Bahía Blanca"],
@@ -75,34 +73,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Fecha nacimiento: autoformato
-  document.getElementById('fechaNacimiento').addEventListener('input', function (e) {
-    let input = e.target.value.replace(/\D/g, '');
-    if (input.length >= 3 && input.length <= 4) {
-      input = input.slice(0, 2) + '/' + input.slice(2);
-    } else if (input.length > 4) {
-      input = input.slice(0, 2) + '/' + input.slice(2, 4) + '/' + input.slice(4, 8);
-    }
-    e.target.value = input;
-  });
-
-  // Validación intereses
-  const checkboxes = document.querySelectorAll('input[name="intereses"]');
-  const btnSiguiente = document.getElementById('btnSiguiente');
-
-  checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', () => {
-      const algunoMarcado = Array.from(checkboxes).some(c => c.checked);
-      btnSiguiente.disabled = !algunoMarcado;
-    });
-  });
-
-  document.getElementById('interesesForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert("Formulario completado. Gracias por registrarte en el DNI Cultural.");
-    // Aquí podés agregar el código para enviar al backend
-  });
-});
+  // Fecha nacimiento
+  const fechaInput = document.getElementById("fechaNacimiento");
+  const hoy = new Date().toISOString().split("T")[0];
+  const min = "1970-01-01";
+  fechaInput.setAttribute("min", min);
+  fechaInput.setAttribute("max", hoy);
 
 // =======================
 // UBICACIÓN DINÁMICA
@@ -272,9 +248,20 @@ function inicializarNavegacionPasos() {
 function mostrarPaso1() {
     document.getElementById("paso1").classList.add("active");
     document.getElementById("paso2").classList.remove("active");
+
+    // Cambiar estado visual de pasos
+    const pasos = document.querySelectorAll(".wizard-pasos .paso");
+    pasos[0].classList.add("activo");
+    pasos[1].classList.remove("activo");
 }
 
 function mostrarPaso2() {
     document.getElementById("paso1").classList.remove("active");
     document.getElementById("paso2").classList.add("active");
+
+    // Cambiar estado visual de pasos
+    const pasos = document.querySelectorAll(".wizard-pasos .paso");
+    pasos[0].classList.remove("activo");
+    pasos[1].classList.add("activo");
 }
+
