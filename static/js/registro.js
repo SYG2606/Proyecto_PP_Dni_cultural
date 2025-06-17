@@ -1,3 +1,29 @@
+
+// =======================
+// CONFIGURACIÓN INICIAL
+// =======================
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Mostrar el paso 1 al inicio
+    mostrarPaso1();
+
+    // Inicializar selects de país/provincia/municipio
+    inicializarUbicacion();
+
+    // Inicializar validación de fecha
+    inicializarFechaNacimiento();
+
+    // Inicializar validación de intereses
+    inicializarValidacionIntereses();
+
+    // Eventos de formulario
+    inicializarEventosFormularios();
+
+    // Botones navegación pasos
+    inicializarNavegacionPasos();
+});
+
+=======
 document.addEventListener('DOMContentLoaded', function () {
   const provinciasPorPais = {
     Argentina: {
@@ -78,9 +104,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-<<<<<<< Updated upstream
-// Funciones para mostrar pasos
-=======
 // =======================
 // UBICACIÓN DINÁMICA
 // =======================
@@ -179,6 +202,7 @@ function inicializarValidacionIntereses() {
 // EVENTOS DE FORMULARIOS
 // =======================
 
+
 function inicializarEventosFormularios() {
     const interesesForm = document.getElementById("interesesForm");
     const registroForm = document.getElementById("registroForm");
@@ -245,35 +269,12 @@ function inicializarNavegacionPasos() {
     }
 }
 
->>>>>>> Stashed changes
 function mostrarPaso1() {
-  document.getElementById('paso1').classList.add('active');
-  document.getElementById('paso2').classList.remove('active');
-}
-
-function volverPaso1() {
-  mostrarPaso1();
+    document.getElementById("paso1").classList.add("active");
+    document.getElementById("paso2").classList.remove("active");
 }
 
 function mostrarPaso2() {
-  document.getElementById('paso1').classList.remove('active');
-  document.getElementById('paso2').classList.add('active');
-}
-function abrirModal(event) {
-    event.preventDefault();
-    const modal = document.getElementById('modalTerminos');
-    modal.style.display = 'block';
-}
-
-function cerrarModal() {
-    const modal = document.getElementById('modalTerminos');
-    modal.style.display = 'none';
-}
-
-// Cerrar el modal si se hace clic fuera del contenido
-window.onclick = function(event) {
-    const modal = document.getElementById('modalTerminos');
-    if (event.target === modal) {
-        modal.style.display = 'none';
-    }
+    document.getElementById("paso1").classList.remove("active");
+    document.getElementById("paso2").classList.add("active");
 }

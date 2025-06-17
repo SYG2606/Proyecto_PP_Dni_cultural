@@ -64,133 +64,141 @@
 <body>
   <div id="navbar"></div>
 
-  <main>
-    <!-- Wizard de pasos -->
-    <section class="registro-wizard">
-      <div class="wizard-pasos">
-        <div class="paso activo">
-          <div class="circulo">1</div>
-          <p><strong>Creá tu cuenta</strong></p>
-        </div>
-        <div class="linea"></div>
-        <div class="paso">
-          <div class="circulo">2</div>
-          <p>Áreas artísticas</p>
-        </div>
-      </div>
-    </section>
 
-    <!-- Paso 1 -->
-    <section id="paso1" class="formulario-paso1 active">
-      <h2>Creá tu cuenta</h2>
-      <form id="registroForm">
-        <div class="input-group">
-          <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre" required />
-        </div>
+        <section class="registro-wizard">
+            <div class="wizard-pasos">
+                <div class="paso activo">
+                    <div class="circulo">1</div>
+                    <p><strong>Creá tu cuenta</strong></p>
+                </div>
+                <div class="linea"></div>
+                <div class="paso">
+                    <div class="circulo">2</div>
+                    <p>Áreas artísticas</p>
+                </div>
+            </div>
+        </section>
 
-        <div class="input-group">
-          <label for="apellido">Apellido</label>
-          <input type="text" id="apellido" name="apellido" required />
-        </div>
+        <section id="paso1" class="formulario-paso1 active">
+            <h2>Creá tu cuenta</h2>
+            <form id="registroForm">
 
-        <div class="input-group">
-          <label for="fechaNacimiento">Fecha de nacimiento</label>
-          <input type="text" id="fechaNacimiento" name="fechaNacimiento" placeholder="dd/mm/yyyy" maxlength="10" required />
-        </div>
+                <div class="input-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
 
-        <div class="input-group">
-          <label for="genero">Género</label>
-          <select id="genero" name="genero" required>
-            <option value="" disabled selected>Seleccioná una opción</option>
-            <option value="masculino">Masculino</option>
-            <option value="femenino">Femenino</option>
-            <option value="otro">Otro</option>
-          </select>
-        </div>
+                <div class="input-group">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" id="apellido" name="apellido" required>
+                </div>
 
-        <div class="input-group">
-          <label for="pais">País</label>
-          <select id="pais" name="pais" required>
-            <option value="" disabled selected>Seleccioná un país</option>
-            <option value="Argentina">Argentina</option>
-          </select>
-        </div>
+                <div class="input-group">
+                    <label for="fechaNacimiento">Fecha de nacimiento</label>
+                    <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+                </div>
 
-        <div class="input-group">
-          <label for="provincia">Provincia</label>
-          <select id="provincia" name="provincia" required disabled>
-            <option value="" disabled selected>Seleccioná una provincia</option>
-          </select>
-        </div>
+                <div class="input-group">
+                    <label for="genero">Género</label>
+                    <select id="genero" name="genero" required>
+                        <option value="" disabled selected>Seleccioná una opción</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
 
-        <div class="input-group">
-          <label for="municipio">Municipio/Departamento</label>
-          <select id="municipio" name="municipio" required disabled>
-            <option value="" disabled selected>Seleccioná un municipio</option>
-          </select>
-        </div>
+                <div class="input-group">
+                    <label for="pais">País</label>
+                    <select id="pais" name="pais" required>
+                        <option value="" disabled selected>Seleccioná un país</option>
+                        <option value="Argentina">Argentina</option>
+                        <!-- Podés agregar más países si lo necesitás -->
+                    </select>
+                </div>
 
-        <div class="input-group">
-          <label for="email">Correo electrónico</label>
-          <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required />
-        </div>
+                <div class="input-group">
+                    <label for="provincia">Provincia</label>
+                    <select id="provincia" name="provincia" required disabled>
+                        <option value="" disabled selected>Seleccioná una provincia</option>
+                    </select>
+                </div>
 
-        <div class="input-group">
-          <label for="confirmarEmail">Confirmar correo electrónico</label>
-          <input type="email" id="confirmarEmail" name="confirmarEmail" required />
-        </div>
+                <div class="input-group">
+                    <label for="municipio">Municipio/Departamento</label>
+                    <select id="municipio" name="municipio" required disabled>
+                        <option value="" disabled selected>Seleccioná un municipio</option>
+                    </select>
+                </div>
 
-        <div class="input-group">
-          <label for="password">Contraseña</label>
-          <input type="password" id="password" name="password" required />
-        </div>
 
-        <div class="input-group">
-          <label for="confirmarPassword">Confirmar contraseña</label>
-          <input type="password" id="confirmarPassword" name="confirmarPassword" required />
-        </div>
 
-        <div class="checkbox-group">
-          <input type="checkbox" id="terminos" required />
-          <label for="terminos">Acepto los <a href="#" onclick="abrirModal(event)">Términos y condiciones</a></label>
-        </div>
+                <div class="input-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                </div>
 
-        <button type="submit" class="btn-principal">Registrarme</button>
-        <p class="login-link">¿Ya tenés una cuenta? <a href="#">Ingresá</a></p>
-      </form>
-    </section>
+                <div class="input-group">
+                    <label for="confirmarEmail">Confirmar correo electrónico</label>
+                    <input type="email" id="confirmarEmail" name="confirmarEmail" required>
+                </div>
 
-    <!-- Paso 2 -->
-    <section id="paso2" class="formulario-paso2">
-      <h2>Intereses culturales</h2>
-      <p>¿En qué categoría artística te desarrollás actualmente? Seleccioná una o más áreas...</p>
+                <div class="input-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
 
-      <form id="interesesForm">
-        <div class="checkbox-grid">
-          <div>
-            <label><input type="checkbox" name="intereses" value="Artesanía" /> Artesanía</label><br />
-            <label><input type="checkbox" name="intereses" value="Audiovisual" /> Audiovisual</label><br />
-            <label><input type="checkbox" name="intereses" value="Danza" /> Danza</label><br />
-            <label><input type="checkbox" name="intereses" value="Teatro" /> Teatro</label><br />
-          </div>
-          <div>
-            <label><input type="checkbox" name="intereses" value="Música" /> Música</label><br />
-            <label><input type="checkbox" name="intereses" value="Literatura" /> Literatura</label><br />
-            <label><input type="checkbox" name="intereses" value="Fotografía" /> Fotografía</label><br />
-            <label><input type="checkbox" name="intereses" value="Escultura" /> Escultura</label><br />
-          </div>
-        </div>
+                <div class="input-group">
+                    <label for="confirmarPassword">Confirmar contraseña</label>
+                    <input type="password" id="confirmarPassword" name="confirmarPassword" required>
+                </div>
 
-        <div class="botones-navegacion">
-          <button type="button" onclick="volverPaso1()" class="btn-secundario">Anterior</button>
-          <button type="submit" class="btn-principal" id="btnSiguiente" disabled>Siguiente</button>
-        </div>
-      </form>
-    </section>
-  </main>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terminos" required>
+                    <label for="terminos">Acepto los <a
+                            href="/src/views/pages/public/terminos_condiciones.html">Términos y condiciones</a></label>
+                </div>
 
-  <div id="footer"></div>
+                <button type="submit" class="btn-principal">Registrarme</button>
+
+                <p class="login-link">¿Ya tenés una cuenta? <a href="#">Ingresá</a></p>
+
+            </form>
+        </section>
+
+        <section id="paso2" class="formulario-paso2">
+            <h2>Intereses culturales</h2>
+            <p>¿En qué categoría artística te desarrollás actualmente? Seleccioná una o más áreas que mejor representen
+                tu producción o actividad cultural dentro de Santiago del Estero. Estas categorías responden a los ejes
+                trabajados por la Subsecretaría de Cultura.</p>
+
+            <form id="interesesForm">
+                <div class="checkbox-grid">
+                    <div>
+                        <label><input type="checkbox" name="intereses" value="Artesanía"> Artesanía</label><br>
+                        <label><input type="checkbox" name="intereses" value="Audiovisual"> Audiovisual</label><br>
+                        <label><input type="checkbox" name="intereses" value="Danza"> Danza</label><br>
+                        <label><input type="checkbox" name="intereses" value="Teatro"> Teatro</label><br>
+                    </div>
+                    <div>
+                        <label><input type="checkbox" name="intereses" value="Música"> Música</label><br>
+                        <label><input type="checkbox" name="intereses" value="Literatura"> Literatura</label><br>
+                        <label><input type="checkbox" name="intereses" value="Fotografía"> Fotografía</label><br>
+                        <label><input type="checkbox" name="intereses" value="Escultura"> Escultura</label><br>
+                    </div>
+                </div>
+
+                <div class="botones-navegacion">
+                    <button type="button" onclick="volverPaso1()" class="btn-secundario"
+                        id="btn-anterior">Anterior</button>
+                    <button type="submit" class="btn-principal" id="btnSiguiente" disabled>Siguiente</button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <div id="footer"></div>
 
   <!-- Scripts -->
   <script src="/static/js/main.js"></script>
@@ -203,6 +211,7 @@
       <iframe src="/src/views/pages/public/terminos_condiciones.html" frameborder="0"></iframe>
     </div>
   </div>
+
 </body>
 
 </html>
