@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const clave = document.getElementById("clave").value.trim();
 
       if (usuario === "admin" && clave === "1234") {
-        window.location.href = "../user/dashboard-usuario.html";
+        window.location.href = "/user/dashboard-usuario.html";
       } else {
         mensajeError.style.display = "block";
       }

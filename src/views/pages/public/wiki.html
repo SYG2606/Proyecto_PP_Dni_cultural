@@ -1,93 +1,102 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca Digital - DNI Cultural</title>
-  <link rel="stylesheet" href="../../../../static/css/main.css" /> <!-- Asegúrate de que este archivo exista y contenga el estilo base -->
-  <link rel="stylesheet" href="../../../../static/css/wiki.css" /> <!-- Estilo específico de la Biblioteca Digital -->
+    <link rel="stylesheet" href="/static/css/main.css" />
+    <!-- Asegúrate de que este archivo exista y contenga el estilo base -->
+    <link rel="stylesheet" href="/static/css/wiki.css" /> <!-- Estilo específico de la Biblioteca Digital -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
 </head>
+
 <body>
 
-  <div id="navbar"></div>
+    <div id="navbar"></div>
 
-    <!-- Main Content: Biblioteca Digital -->
+    <!-- Contenido Principal -->
     <main>
-        <img src="../../../../static/img/portada.png" alt="Logo Santiago del Estero">
-        <!-- Filtro de búsqueda -->
-        <section class="search">
-            <h2>Buscar en la Biblioteca 🔎</h2>
-            <form action="#" method="get">
-                <input type="text" placeholder="Buscar por título, autor, tema..." name="search" id="search" required>
-                <button type="submit">Buscar 🧐</button>
-            </form>
-        </section>
+        <img src="/static/img/portada.png" alt="Logo Santiago del Estero">
 
-        <!-- Sección de Biografías -->
-        <section id="biografias">
-            <h2>Biografías de Artistas 🎭</h2>
-            <div class="card">
-                <h3>Juan Pérez 🎸</h3>
-                <p>Guitarrista y compositor de música folclórica. Ha participado en varios festivales nacionales. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                <a href="#">Leer Biografía Completa 📖</a>
-            </div>
-            <div class="card">
-                <h3>María González ✍️</h3>
-                <p>Escritora y poeta. Su trabajo ha sido reconocido a nivel nacional en el ámbito de la literatura contemporánea.</p>
-                <a href="#">Leer Biografía Completa 📖</a>
-            </div>
-        </section>
+        <!-- Búsqueda -->
+<div class="search">
+    <h2>Buscar en la Biblioteca</h2>
+    <form id="form-busqueda" action="#" method="get">
+        <input type="text" placeholder="Buscar por nombre o palabra clave..." name="search" id="search" required>
 
-        <!-- Sección de Estudios Académicos -->
-        <section id="estudios">
-            <h2>Estudios Académicos y Artísticos 📜</h2>
-            <div class="card">
-                <h3>Estudio sobre el Folklore en Santiago del Estero 🎶</h3>
-                <a href="documentos/estudio_folklore.pdf" target="_blank">Descargar PDF 📥</a>
-            </div>
-            <div class="card">
-                <h3>Impacto de la Danza en la Cultura Local 💃</h3>
-                <a href="documentos/impacto_danza.pdf" target="_blank">Descargar PDF 📥</a>
-            </div>
-        </section>
+        <select name="categoria" id="categoria">
+            <option value="">Todas las categorías</option>
+            <option value="Artesania">Artesania</option>
+            <option value="Audiovisual">Audiovisual</option>
+            <option value="Danza">Danza</option>
+            <option value="Teatro">Teatro</option>
+            <option value="Musica">Musica</option>
+            <option value="Literatura">Literatura</option>
+            <option value="Escultura">Escultura</option>
+            <!-- Podés agregar más categorías según los datos que tengas -->
+        </select>
 
-        <!-- Sección de Obras de Artistas -->
-        <section id="obras">
-            <h2>Obras de Artistas 🎨</h2>
-            <div class="card">
-                <h3>Obra de Juan Pérez: "Cultura y Raíces" 🎶</h3>
-                <img src="imagenes/juan_perez.jpg" alt="Obra de Juan Pérez">
-                <p>Una exploración de la identidad cultural a través de la música folclórica.</p>
-                <a href="imagenes/juan_perez_audio.mp3" target="_blank">Escuchar la obra 🎧</a>
-            </div>
-            <div class="card">
-                <h3>Obra de María González: "Versos del Alma" 📜</h3>
-                <img src="imagenes/maria_gonzalez.jpg" alt="Obra de María González">
-                <p>Una serie de poesías sobre la conexión emocional con la naturaleza.</p>
-                <a href="imagenes/maria_gonzalez_audio.mp3" target="_blank">Escuchar la obra 🎧</a>
-            </div>
-        </section>
+        <button type="submit">Buscar</button>
+    </form>
+</div>
 
-        <!-- Sección de Proyectos Culturales -->
-        <section id="proyectos">
-            <h2>Proyectos Culturales 🎪</h2>
-            <div class="card">
-                <h3>Festival Nacional de Folklore 🎤</h3>
-                <p>Un recorrido histórico del evento más importante del folklore en Argentina.</p>
-                <a href="proyectos/festival_nacional.pdf" target="_blank">Descargar PDF 📥</a>
-            </div>
-            <div class="card">
-                <h3>Exposición de Artesanía Local 🛠️</h3>
-                <p>Documentación fotográfica y artículos sobre la exposición de arte local.</p>
-                <a href="proyectos/exposicion_artesania.pdf" target="_blank">Descargar PDF 📥</a>
-            </div>
-        </section>
+
+        <div class="container">
+    <aside class="sidebar">
+        <h2>🎨 Artistas Famosos</h2>
+
+        <div class="famoso">
+            <img src="/static/img/merce.jpg" alt="Mercedes Sosa">
+            <h4>Mercedes Sosa</h4>
+            <p>Cantante y referente del folklore argentino.</p>
+        </div>
+
+        <div class="famoso">
+            <img src="/static/img/berni.jpg" alt="Antonio Berni">
+            <h4>Antonio Berni</h4>
+            <p>Pintor y grabador destacado por su arte social.</p>
+        </div>
+    </aside>
+
+            <!-- Sección Dinámica por Categorías -->
+            <section class="main-content" id="biografias">
+                <h2>Artistas Registrados</h2>
+
+                <div class="categoria" data-category="Música">
+                    <h3>Música</h3>
+                    <div class="card">
+                        <img src="/static/img/juanperez.jpg" alt="Juan Pérez">
+                        <div class="card-info">
+                            <h4>Juan Pérez</h4>
+                            <p>Guitarrista y compositor de música folclórica.</p>
+                            <a href="#" class="btn-biografia">Leer Biografía Completa</a>
+                        </div>
+                    </div>
+                </div> <!-- 👈 Cerrás la categoría Música -->
+
+                <div class="categoria" data-category="Literatura">
+                    <h3>Literatura</h3>
+                    <div class="card">
+                        <img src="/static/img/dem.jpg" alt="María González">
+                        <div class="card-info">
+                            <h4>María González</h4>
+                            <p>Escritora y poeta contemporánea.</p>
+                            <a href="#" class="btn-biografia">Leer Biografía Completa</a>
+                        </div>
+                    </div>
+                </div> <!-- 👈 Cerrás la categoría Literatura -->
+            </section>
+
     </main>
+    </div>
 
     <!-- Footer -->
-  <div id="footer"></div>
+    <div id="footer"></div>
 
-  <script src="../../../../static/js/main.js"></script>
+    <script src="/static/js/main.js"></script>
 
 </body>
+
 </html>

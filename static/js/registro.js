@@ -151,7 +151,7 @@ function inicializarUbicacion() {
 function inicializarFechaNacimiento() {
     const fechaInput = document.getElementById("fechaNacimiento");
     const hoy = new Date().toISOString().split("T")[0];
-    const min = "1950-01-01";
+    const min = "1970-01-01";
     fechaInput.setAttribute("min", min);
     fechaInput.setAttribute("max", hoy);
 }

@@ -39,7 +39,7 @@ p {
 }
 
 main {
-  animation: fadeInDown 2s ease-in-out;
+  animation: fadeInDown 1s ease-in-out;
 }
 
 label {
