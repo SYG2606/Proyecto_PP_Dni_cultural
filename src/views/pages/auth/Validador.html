@@ -87,8 +87,31 @@
         <p>© 2025 DNI Cultural | Todos los derechos reservados 📜</p>
     </footer>
 
-    <script>
+
+
         // Simulando los registros de artistas para el panel de validación
+        <script>
+  function validarLogin(event) {
+    event.preventDefault(); // Evita que se recargue la página
+
+    const usuario = document.getElementById("usuario").value;
+    const clave = document.getElementById("clave").value;
+
+    // Claves de ejemplo (solo para prueba, ¡no lo uses así en producción!)
+    const usuarioValido = "admin";
+    const claveValida = "1234";
+
+    if (usuario === usuarioValido && clave === claveValida) {
+      document.getElementById("login-form").style.display = "none";
+      document.getElementById("panel-validacion").style.display = "block";
+    } else {
+      alert("Usuario o clave incorrectos");
+    }
+
+    return false;
+  }
+</script>
+
 
     </script>
 </body>
