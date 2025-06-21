@@ -23,6 +23,7 @@
             </form>
         </section>
 
+<<<<<<< Updated upstream
         <!-- Sección de Biografías -->
         <section id="biografias">
             <h2>Biografías de Artistas 🎭</h2>
@@ -67,6 +68,81 @@
                 <a href="imagenes/maria_gonzalez_audio.mp3" target="_blank">Escuchar la obra 🎧</a>
             </div>
         </section>
+=======
+        <!-- Búsqueda -->
+        <div class="search">
+            <h2>Buscar en la Biblioteca</h2>
+            <form id="form-busqueda" action="#" method="get">
+                <input type="text" placeholder="Buscar por nombre o palabra clave..." name="search" id="search"
+                    required>
+
+                <select name="categoria" id="categoria">
+                    <option value="">Todas las categorías</option>
+                    <option value="Artesania">Artesania</option>
+                    <option value="Audiovisual">Audiovisual</option>
+                    <option value="Danza">Danza</option>
+                    <option value="Teatro">Teatro</option>
+                    <option value="Musica">Musica</option>
+                    <option value="Literatura">Literatura</option>
+                    <option value="Escultura">Escultura</option>
+                    <!-- Podés agregar más categorías según los datos que tengas -->
+                </select>
+
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+
+
+        <div class="container">
+            <aside class="sidebar">
+                <h2>🎨 Artistas Famosos</h2>
+
+                <div class="famoso">
+                    <img src="/static/img/merce.jpg" alt="Mercedes Sosa">
+                    <h4>Mercedes Sosa</h4>
+                    <p>Cantante y referente del folklore argentino.</p>
+                </div>
+
+                <div class="famoso">
+                    <img src="/static/img/berni.jpg" alt="Antonio Berni">
+                    <h4>Antonio Berni</h4>
+                    <p>Pintor y grabador destacado por su arte social.</p>
+                </div>
+            </aside>
+
+            <!-- Sección Dinámica por Categorías -->
+            <section class="main-content" id="biografias">
+                <h2>Artistas Registrados</h2>
+
+                <div class="categoria" data-category="Música">
+                    <h3>Música</h3>
+                    <div class="card">
+                        <img src="/static/img/juanperez.jpg" alt="Juan Pérez">
+                        <div class="card-info">
+                            <h4>Juan Pérez</h4>
+                            <p>Juan es un guitarrista y compositor autodidacta nacido en Santiago del Estero. Desde
+                                joven ha dedicado su vida a preservar y difundir el folklore argentino, fusionando
+                                estilos tradicionales con arreglos contemporáneos. Su obra más destacada, *"Raíces del
+                                Monte"*, ha sido interpretada en festivales provinciales y transmitida por radios
+                                locales.</p>
+                            <a href="#" class="btn-biografia">Leer Biografía Completa</a>
+                        </div>
+                    </div>
+                </div> <!-- 👈 Cerrás la categoría Música -->
+
+                <div class="categoria" data-category="Literatura">
+                    <h3>Literatura</h3>
+                    <div class="card">
+                        <img src="/static/img/dem.jpg" alt="María González">
+                        <div class="card-info">
+                            <h4>María González</h4>
+        <p>María es escritora, poeta y docente. Se formó en Letras en la Universidad Nacional y desde entonces ha publicado tres libros de poesía y un ensayo sobre identidad cultural en el norte argentino. Su estilo mezcla lo íntimo con lo social, y ha participado en múltiples ferias del libro y talleres literarios comunitarios.</p>
+                            <a href="#" class="btn-biografia">Leer Biografía Completa</a>
+                        </div>
+                    </div>
+                </div> <!-- 👈 Cerrás la categoría Literatura -->
+            </section>
+>>>>>>> Stashed changes
 
         <!-- Sección de Proyectos Culturales -->
         <section id="proyectos">

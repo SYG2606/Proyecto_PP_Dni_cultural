@@ -1,0 +1,68 @@
+.dashboard-container {
+  max-width: 800px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #3366cc;
+  font-size: 1.8rem;
+}
+
+.borrador-form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #444;
+}
+
+.borrador-form input[type="text"],
+.borrador-form input[type="url"],
+.borrador-form input[type="file"],
+.borrador-form select,
+.borrador-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  background-color: #fafafa;
+  transition: border-color 0.3s ease;
+}
+
+.borrador-form input:focus,
+.borrador-form select:focus,
+.borrador-form textarea:focus {
+  outline: none;
+  border-color: #3366cc;
+}
+
+.borrador-form textarea {
+  resize: vertical;
+}
+
+.btn-guardar {
+  margin-top: 25px;
+  width: 100%;
+  padding: 14px;
+  background-color: #3366cc;
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-guardar:hover {
+  background-color: #274a99;
+  transform: scale(1.01);
+}
