@@ -110,3 +110,30 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 }
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.get('paso') === '2') {
+  mostrarPaso2(); // llama a tu función existente
+}
+//para el segundo paso
+
+document.getElementById('interesesForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const intereses = Array.from(document.querySelectorAll('input[name="intereses"]:checked'))
+    .map(cb => cb.value);
+
+  const formData = new FormData();
+  formData.append("intereses", intereses.join(","));
+
+  try {
+    const response = await fetch('/Proyecto_PP_Dni_cultural/guardar_intereses.php', {
+      method: 'POST',
+      body: formData
+    });
+
+    const resultado = await response.text();
+    alert("Intereses guardados correctamente: " + resultado);
+  } catch (err) {
+    alert("Error al guardar intereses");
+  }
+});

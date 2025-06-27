@@ -5,8 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Registro del Artista</title>
-  <link rel="stylesheet" href="/static/css/main.css" />
-  <link rel="stylesheet" href="/static/css/registro.css" />
+  
+  <link rel="stylesheet" href="/Proyecto_PP_Dni_cultural/static/css/main.css" />
+  <link rel="stylesheet" href="/Proyecto_PP_Dni_cultural/static/css/registro.css" />
 
   <style>
   .modal {
@@ -63,7 +64,7 @@
 
 <body>
   <div id="navbar"></div>
-
+  
   <main>
     <!-- Wizard de pasos -->
     <section class="registro-wizard">
@@ -82,8 +83,11 @@
 
     <!-- Paso 1 -->
     <section id="paso1" class="formulario-paso1 active">
+      
+
       <h2>Creá tu cuenta</h2>
-      <form id="registroForm">
+      <form action="/Proyecto_PP_Dni_cultural/registrar.php" method="POST">
+      <!--  <form id="registroForm">-->
         <div class="input-group">
           <label for="nombre">Nombre</label>
           <input type="text" id="nombre" name="nombre" required />
@@ -152,7 +156,9 @@
         </div>
 
         <div class="checkbox-group">
-          <input type="checkbox" id="terminos" required />
+          <!--<input type="checkbox" id="terminos" required />-->
+          <input type="checkbox" id="terminos" name="terminos" required />
+
           <label for="terminos">Acepto los <a href="#" onclick="abrirModal(event)">Términos y condiciones</a></label>
         </div>
 
@@ -193,14 +199,15 @@
   <div id="footer"></div>
 
   <!-- Scripts -->
-  <script src="/static/js/main.js"></script>
-  <script src="/static/js/registro.js"></script>
+ 
+  <script src="/Proyecto_PP_Dni_cultural/static/js/main.js"></script>
+  <script src="/Proyecto_PP_Dni_cultural/static/js/registro.js"></script>
 
   <!-- Modal -->
   <div id="modalTerminos" class="modal">
     <div class="modal-contenido">
       <span class="cerrar" onclick="cerrarModal()">&times;</span>
-      <iframe src="/src/views/pages/public/terminos_condiciones.html" frameborder="0"></iframe>
+      <iframe src="/Proyecto_PP_Dni_cultural/src/views/pages/public/terminos_condiciones.html" frameborder="0"></iframe>
     </div>
   </div>
 </body>
