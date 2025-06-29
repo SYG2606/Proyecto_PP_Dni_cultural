@@ -19,23 +19,47 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Cargar dinámicamente el navbar
-  fetch("/componentes/navbar.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("navbar").innerHTML = data;
-    })
-    .catch(err => {
-      console.error("Error al cargar el navbar:", err);
-    });
+//   // Cargar dinámicamente el navbar
+//   fetch("/componentes/navbar.html")
+//     .then(response => response.text())
+//     .then(data => {
+//       document.getElementById("navbar").innerHTML = data;
+//     })
+//     .catch(err => {
+//       console.error("Error al cargar el navbar:", err);
+//     });
 
-  // Cargar dinámicamente el footer
-  fetch("/componentes/footer.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("footer").innerHTML = data;
-    })
-    .catch(err => {
-      console.error("Error al cargar el footer:", err);
-    });
+//   // Cargar dinámicamente el footer
+//   fetch("/componentes/footer.html")
+//     .then(response => response.text())
+//     .then(data => {
+//       document.getElementById("footer").innerHTML = data;
+//     })
+//     .catch(err => {
+//       console.error("Error al cargar el footer:", err);
+//     });
+fetch("/Proyecto_PP_Dni_cultural/src/views/pages/public/components/navbar.html")
+  .then(response => response.text())
+  .then(data => {
+    const navbar = document.getElementById("navbar");
+    if (navbar) {
+      navbar.innerHTML = data;
+      if (window.lucide) lucide.createIcons?.();
+    }
+  })
+  .catch(err => {
+    console.error("Error al cargar el navbar:", err);
+  });
+
+fetch("/Proyecto_PP_Dni_cultural/src/views/pages/public/components/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    const footer = document.getElementById("footer");
+    if (footer) {
+      footer.innerHTML = data;
+    }
+  })
+  .catch(err => {
+    console.error("Error al cargar el footer:", err);
+  });
 });
