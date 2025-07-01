@@ -1,0 +1,2 @@
+CMD(administrador)
+mklink /D "D:\xampp\htdocs\Proyecto_PP_Dni_cultural" "E:\Proyecto_PP_Dni_cultural"

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Login - DNI Cultural</title>
+  <!-- <link rel="stylesheet" href="/static/css/main.css" /> -->
+  <!-- <link rel="stylesheet" href="/static/css/login.css" /> -->
+  <link rel="stylesheet" href="/Proyecto_PP_Dni_cultural/static/css/main.css" />
+  <link rel="stylesheet" href="/Proyecto_PP_Dni_cultural/static/css/login.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+
+  <!-- <div id="navbar"></div> -->
+  <?php include __DIR__ . '/../public/components/navbar.html'; ?>
+  
+  <main>
+  <section class="login-box">
+    <h2>Iniciar sesión</h2>
+
+    <form id="loginForm" novalidate>
+      <label for="usuario">Usuario:</label>
+      <input type="text" id="usuario" name="usuario" placeholder="Ingrese su usuario" autocomplete="username" required>
+
+      <label for="clave">Contraseña:</label>
+      <div class="password-wrapper">
+        <input type="password" id="clave" name="clave" placeholder="Ingrese su contraseña" autocomplete="current-password" required>
+      </div>
+
+      <input type="submit" value="Ingresar">
+
+      <p class="forgot-pass"><a href="#">¿Olvidaste tu contraseña?</a></p>
+    </form>
+
+    <p id="mensaje-error" class="error-msg" hidden>Usuario o contraseña incorrectos.</p>
+  </section>
+</main>
+
+
+  <!-- <div id="footer"></div> -->
+<?php include __DIR__ . '/../public/components/footer.html'; ?>
+
+<script src="/Proyecto_PP_Dni_cultural/static/js/main.js"></script
+
+</body>
+
+</html>
