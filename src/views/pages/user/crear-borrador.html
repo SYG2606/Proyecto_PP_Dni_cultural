@@ -44,20 +44,18 @@
         <option value="otro">Otro</option>
       </select>
 
-<label for="multimedia">Enlaces a Fotos/Videos:</label>
-<div id="multimedia-container">
-  <input type="url" name="multimedia[]" placeholder="Ej. https://youtu.be/ejemplo" class="multimedia-input">
-</div>
-<button type="button" id="agregar-enlace" class="btn-agregar">+ Agregar otro enlace</button>
-
-
+      <label>Enlaces a tus Obras (Fotos, Videos, etc.):</label>
+      <div id="links-container">
+        </div>
       <button type="submit" class="btn-guardar">Guardar Borrador</button>
     </form>
   </main>
 
+  
   <div id="footer"></div>
 
   <script src="/static/js/main.js"></script>
+  <script src="/static/js/borrador.js"></script>
   <script>
     document.getElementById("form-borrador").addEventListener("submit", function (e) {
       e.preventDefault();

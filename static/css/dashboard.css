@@ -1,0 +1,150 @@
+/* ============================================= */
+/* ESTILOS PARA DASHBOARDS              */
+/* Y FORMULARIOS INTERNOS               */
+/* ============================================= */
+
+/* Contenedor principal del dashboard */
+.dashboard-container {
+    max-width: 800px;
+    margin: 40px auto; /* Centrado y con espacio arriba/abajo */
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+  }
+  
+  .dashboard-container h2 {
+    text-align: center;
+    color: var(--color-primario); /* Usa el azul institucional */
+    margin-bottom: 30px;
+    font-size: 2rem;
+  }
+  
+  /* Estilos para el formulario de borrador */
+  .borrador-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre cada campo del formulario */
+  }
+  
+  .borrador-form label {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: -10px; /* Acerca la etiqueta a su campo */
+  }
+  
+  /* Estilo unificado para inputs, textareas y selects */
+  .borrador-form input[type="text"],
+  .borrador-form input[type="url"],
+  .borrador-form textarea,
+  .borrador-form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Segoe UI', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Efecto al seleccionar un campo */
+  .borrador-form input:focus,
+  .borrador-form textarea:focus,
+  .borrador-form select:focus {
+    outline: none;
+    border-color: var(--color-primario); /* Borde azul al enfocar */
+    box-shadow: 0 0 8px rgba(54, 119, 137, 0.2);
+  }
+  
+  /* Estilo para el input de archivo */
+  .borrador-form input[type="file"] {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .borrador-form input[type="file"]::file-selector-button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--color-neutro); /* Gris suave */
+    color: var(--color-texto-oscuro);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .borrador-form input[type="file"]::file-selector-button:hover {
+    background-color: #90a4ae;
+  }
+  
+  /* Botón de Guardar */
+  .btn-guardar {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--color-primario); /* Azul institucional */
+    color: var(--color-texto-claro);
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 15px; /* Espacio extra arriba */
+  }
+  
+  .btn-guardar:hover {
+    background-color: #2a5a69; /* Un azul más oscuro */
+    transform: translateY(-2px);
+  }
+
+  /* ============================================= */
+/* ESTILOS PARA INPUTS DINÁMICOS DE ENLACES      */
+/* ============================================= */
+
+/* Contenedor para cada fila de input + botón */
+.link-input-row {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el input y el botón */
+    margin-bottom: 10px; /* Espacio entre filas */
+  }
+  
+  /* Hace que el input ocupe todo el espacio disponible */
+  .link-input-row input {
+    flex-grow: 1;
+  }
+  
+  /* Estilo unificado para los botones de añadir y quitar */
+  .btn-link-action {
+    flex-shrink: 0; /* Evita que el botón se encoja */
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%; /* Botón redondo */
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .btn-link-action:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+  
+  /* Botón de Añadir (+) */
+  .btn-add-link {
+    background-color: var(--color-primario); /* Azul institucional */
+  }
+  
+  /* Botón de Quitar (-) */
+  .btn-remove-link {
+    background-color: #e63946; /* Un color rojo para eliminar */
+  }
