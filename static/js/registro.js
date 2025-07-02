@@ -187,6 +187,11 @@ document.addEventListener("DOMContentLoaded", () => {
 // FUNCIONES DE EVENTOS DE FORMULARIO
 // =======================
 
+document.addEventListener("DOMContentLoaded", () => {
+    inicializarEventosFormularios();
+    inicializarNavegacionPasos();
+});
+
 function inicializarEventosFormularios() {
     const registroForm = document.getElementById("registroForm");
     const interesesForm = document.getElementById("interesesForm");
@@ -194,7 +199,7 @@ function inicializarEventosFormularios() {
     const checkboxes = document.querySelectorAll('#interesesForm input[type="checkbox"]');
     const btnSiguiente = document.getElementById("btnSiguiente");
 
-    // Habilitar botón de "Siguiente" solo cuando hay al menos un interés seleccionado
+    // Habilita botón “Siguiente” cuando se marca algún interés
     if (checkboxes.length > 0 && btnSiguiente) {
         checkboxes.forEach((checkbox) => {
             checkbox.addEventListener("change", () => {
@@ -204,7 +209,7 @@ function inicializarEventosFormularios() {
         });
     }
 
-    // FORMULARIO DE REGISTRO DE USUARIO
+    // Enviar datos del registro (paso 1)
     if (registroForm) {
         registroForm.addEventListener("submit", async (e) => {
             e.preventDefault();
@@ -240,26 +245,24 @@ function inicializarEventosFormularios() {
                 const resultado = await res.text();
 
                 if (resultado.includes("✅")) {
-                    mostrarPaso2();
+                    mostrarPaso2(); // Pasa al segundo paso
                 } else {
                     console.log("Respuesta del servidor:", resultado);
-                    alert("Hubo un error al intentar registrar tu cuenta. Revisá la consola (F12) para ver más detalles.");
+                    alert("Error al registrar tu cuenta. Verificá los datos o mirá la consola.");
                 }
             } catch (error) {
                 console.error("Error del fetch:", error);
-                alert("No se pudo enviar el formulario.\nVer consola para más detalles.");
+                alert("No se pudo enviar el formulario de registro.");
             }
         });
     }
 
-    // FORMULARIO DE INTERESES
+    // Guardar intereses (paso 2)
     if (interesesForm) {
         interesesForm.addEventListener("submit", async (e) => {
             e.preventDefault();
 
             const formData = new FormData(interesesForm);
-            const emailInput = document.getElementById("email");
-            formData.append("email", emailInput.value.trim());
 
             try {
                 const res = await fetch("../../../../controllers/guardar_intereses.php", {
@@ -289,15 +292,7 @@ function inicializarEventosFormularios() {
 function inicializarNavegacionPasos() {
     const paso1 = document.querySelector(".formulario-paso1");
     const paso2 = document.querySelector(".formulario-paso2");
-    const btnSiguiente = document.getElementById("btn-siguiente");
     const btnAnterior = document.getElementById("btn-anterior");
-
-    if (btnSiguiente) {
-        btnSiguiente.addEventListener("click", function () {
-            paso1.classList.remove("active");
-            paso2.classList.add("active");
-        });
-    }
 
     if (btnAnterior) {
         btnAnterior.addEventListener("click", function () {
@@ -311,17 +306,21 @@ function inicializarNavegacionPasos() {
 // MOSTRAR PASO 2 DESDE BACKEND
 // =======================
 
+// Activar paso 2 y copiar email oculto
 function mostrarPaso2() {
-    document.getElementById("paso1").classList.remove("active");
-    document.getElementById("paso2").classList.add("active");
-
+    const paso1 = document.getElementById("paso1");
+    const paso2 = document.getElementById("paso2");
     const pasos = document.querySelectorAll(".wizard-pasos .paso");
+
+    paso1.classList.remove("active");
+    paso2.classList.add("active");
+
     pasos[0].classList.remove("activo");
     pasos[1].classList.add("activo");
 
-    // 👉 Copiamos el email al campo oculto en el paso 2
     const emailVisible = document.getElementById("email");
     const emailOculto = document.getElementById("email_oculto");
+
     if (emailVisible && emailOculto) {
         emailOculto.value = emailVisible.value.trim();
     }
