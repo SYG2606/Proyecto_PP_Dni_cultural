@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear Borrador - DNI Cultural</title>
+  <link rel="stylesheet" href="../../../../static/css/main.css">
+  <link rel="stylesheet" href="../../../../static/css/borrador.css">
+  <link rel="stylesheet" href="../../../../static/css/dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="/static/img/SANTAGO-DEL-ESTERO-2022.svg" alt="Logo Santiago del Estero">
+    </div>
+    <nav>
+      <ul>
+        <li><a class="menu" href="../public/Index.html">Inicio </a></li>
+        <li><a class="menu" href="../auth/login.html">Cerrar Sesión </a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="dashboard-container animate__animated animate__fadeIn">
+    <h2>Crear Borrador de Obra Cultural</h2>
+    <form id="form-borrador" class="borrador-form">
+      <label for="titulo">Título de la Obra/Proyecto:</label>
+      <input type="text" id="titulo" name="titulo" placeholder="Ej. Retrato de mi tierra" required>
+
+      <label for="descripcion">Descripción:</label>
+      <textarea id="descripcion" name="descripcion" placeholder="Escribe una breve descripción de tu obra..." rows="5"
+        required></textarea>
+
+      <label for="fecha_obra">Fecha de Creación/Presentación:</label>
+      <input type="date" id="fecha_obra" name="fecha_obra" required>
+
+      <label for="categoria">Categoría Principal:</label>
+      <select id="categoria" name="categoria" required>
+        <option value="">-- Seleccionar Disciplina --</option>
+        <option value="artesania">Artesanía</option>
+        <option value="audiovisual">Audiovisual</option>
+        <option value="danza">Danza</option>
+        <option value="teatro">Teatro</option>
+        <option value="musica">Música</option>
+        <option value="literatura">Literatura</option>
+        <option value="fotografia">Fotografía</option>
+        <option value="escultura">Escultura</option>
+      </select>
+
+      <div id="campos-dinamicos-container">
+
+        <div id="campos-artesania" class="campos-especificos animate__animated">
+          <label for="materiales_artesania">Materiales Principales:</label>
+          <input type="text" id="materiales_artesania" name="materiales_artesania"
+            placeholder="Ej. Cuero, madera de algarrobo, plata">
+          <label for="tecnica_artesania">Técnica Utilizada:</label>
+          <input type="text" id="tecnica_artesania" name="tecnica_artesania"
+            placeholder="Ej. Cincelado, telar, alfarería">
+        </div>
+
+        <div id="campos-audiovisual" class="campos-especificos animate__animated">
+          <label for="tipo_audiovisual">Tipo de Obra:</label>
+          <input type="text" id="tipo_audiovisual" name="tipo_audiovisual"
+            placeholder="Ej. Cortometraje, Documental, Videoclip">
+          <label for="rol_audiovisual">Tu Rol Principal:</label>
+          <input type="text" id="rol_audiovisual" name="rol_audiovisual"
+            placeholder="Ej. Dirección, Guion, Dirección de Fotografía">
+        </div>
+
+        <div id="campos-danza" class="campos-especificos animate__animated">
+          <label for="estilo_danza">Estilo/Género de Danza:</label>
+          <input type="text" id="estilo_danza" name="estilo_danza" placeholder="Ej. Folclore, Clásico, Contemporáneo">
+          <label for="compania_danza">Nombre de la Compañía/Grupo (si aplica):</label>
+          <input type="text" id="compania_danza" name="compania_danza" placeholder="Ballet Oficial de la Provincia">
+        </div>
+
+        <div id="campos-teatro" class="campos-especificos animate__animated">
+          <label for="lugar_teatro">Teatro o Lugar de Presentación:</label>
+          <input type="text" id="lugar_teatro" name="lugar_teatro" placeholder="Ej. Teatro 25 de Mayo, Casa Castro">
+          <label for="genero_teatro">Género Teatral:</label>
+          <input type="text" id="genero_teatro" name="genero_teatro"
+            placeholder="Ej. Drama, Comedia, Teatro Experimental">
+        </div>
+
+        <div id="campos-musica" class="campos-especificos animate__animated">
+          <label for="productora_musica">Productora/Sello Discográfico:</label>
+          <input type="text" id="productora_musica" name="productora_musica"
+            placeholder="Ej. Independiente, Sony Music">
+          <label for="album_musica">Nombre del Álbum/EP:</label>
+          <input type="text" id="album_musica" name="album_musica" placeholder="Ej. Cantos de mi Tierra">
+        </div>
+
+        <div id="campos-literatura" class="campos-especificos animate__animated">
+          <label for="editorial_literatura">Editorial:</label>
+          <input type="text" id="editorial_literatura" name="editorial_literatura"
+            placeholder="Ej. Editorial Planeta, Edición de Autor">
+          <label for="isbn_literatura">ISBN (Opcional):</label>
+          <input type="text" id="isbn_literatura" name="isbn_literatura" placeholder="978-3-16-148410-0">
+        </div>
+
+        <div id="campos-fotografia" class="campos-especificos animate__animated">
+          <label for="tipo_fotografia">Tipo de Fotografía:</label>
+          <input type="text" id="tipo_fotografia" name="tipo_fotografia"
+            placeholder="Ej. Digital, Analógica, Fotoperiodismo">
+          <label for="lugar_fotografia">Lugar de la Captura:</label>
+          <input type="text" id="lugar_fotografia" name="lugar_fotografia"
+            placeholder="Ej. Parque Aguirre, Santiago del Estero">
+        </div>
+
+        <div id="campos-escultura" class="campos-especificos animate__animated">
+          <label for="materiales_escultura">Materiales Principales:</label>
+          <input type="text" id="materiales_escultura" name="materiales_escultura"
+            placeholder="Ej. Bronce, Mármol, Madera Reciclada">
+          <label for="dimensiones_escultura">Dimensiones (Alto x Ancho x Prof. en cm):</label>
+          <input type="text" id="dimensiones_escultura" name="dimensiones_escultura" placeholder="Ej. 120 x 50 x 30 cm">
+        </div>
+
+      </div>
+      <label>Enlaces relacionados a la Obra (Fotos, Videos, etc.):</label>
+      <div id="links-container"></div>
+
+      <button type="submit" class="btn-guardar">Guardar Borrador</button>
+    </form>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="/static/js/main.js"></script>
+  <script src="/static/js/borrador.js"></script>
+  <script>
+    document.getElementById("form-borrador").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("✅ Borrador guardado correctamente.");
+      // Aquí podrías guardar los datos en localStorage, o enviarlos por fetch
+    });
+  </script>
+</body>
+
+</html>
