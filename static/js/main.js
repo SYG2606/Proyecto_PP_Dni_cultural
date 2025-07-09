@@ -43,15 +43,23 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", function (e) {
     e.preventDefault(); // Evita que recargue la página
 
-    const usuario = document.getElementById("usuario").value.trim();
+    const usuario = document.getElementById("usuario").value.trim().toLowerCase();
     const clave = document.getElementById("clave").value.trim();
 
-    // Validación simulada
+    // Validación de usuarios
     if (usuario === "admin" && clave === "1234") {
-      // Redirige al dashboard
-      window.location.href = "/src/views/pages/user/dashboard-usuario.html";
+      localStorage.setItem("usuarioActivo", "admin");
+      window.location.href = "/src/views/pages/user/dashboard-adm.html";
+
+    } else if (usuario === "artista" && clave === "1234") {
+      localStorage.setItem("usuarioActivo", "artista");
+      window.location.href = "/src/views/pages/user/dashboard-user.html";
+
+    } else if (usuario === "editor" && clave === "1234") {
+      localStorage.setItem("usuarioActivo", "editor");
+      window.location.href = "/src/views/pages/user/dashboard-editor.html";
+
     } else {
-      // Muestra mensaje de error
       errorMsg.style.display = "block";
     }
   });

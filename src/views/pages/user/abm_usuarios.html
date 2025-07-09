@@ -27,6 +27,11 @@
           <label for="nombre">Nombre:</label>
           <input type="text" id="nombre" required />
         </div>
+        <!-- <div class="form-group">
+  <label for="nombreArtistico">Nombre Artístico:</label>
+  <input type="text" id="nombreArtistico" required />
+</div> -->
+
 
         <div class="form-group">
           <label for="correo">Correo:</label>
@@ -53,10 +58,22 @@
 
       <input type="text" id="buscador" placeholder="🔍 Buscar por nombre..." />
 
+      <div style="margin: 10px 0;">
+  <label for="filtro-rol"><strong>Filtrar por Rol:</strong></label>
+  <select id="filtro-rol">
+    <option value="Todos">Todos</option>
+    <option value="Validador">Validador</option>
+    <option value="Administrador">Administrador</option>
+    <option value="Editor">Editor</option>
+  </select>
+</div>
+
+
       <table class="tabla-usuarios">
         <thead>
           <tr>
             <th>Nombre</th>
+            <!--<th>Nombre Artístico</th>-->
             <th>Correo</th>
             <th>Rol</th>
             <th>Acciones</th>

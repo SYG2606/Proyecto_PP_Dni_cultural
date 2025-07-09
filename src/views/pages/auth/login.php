@@ -4,16 +4,19 @@
 <head>
   <meta charset="UTF-8" />
   <title>Login - DNI Cultural</title>
-  <link rel="stylesheet" href="../../../../static/css/main.css" />
-  <link rel="stylesheet" href="../../../../static/css/login.css" />
+  <!-- <link rel="stylesheet" href="/static/css/main.css" /> -->
+  <!-- <link rel="stylesheet" href="/static/css/login.css" /> -->
+  <link rel="stylesheet" href="/Proyecto_PP_Dni_cultural/static/css/main.css" />
+  <link rel="stylesheet" href="/Proyecto_PP_Dni_cultural/static/css/login.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body>
 
-  <div id="navbar"></div>
-
-<main>
+  <!-- <div id="navbar"></div> -->
+  <?php include __DIR__ . '/../public/components/navbar.html'; ?>
+  
+  <main>
   <section class="login-box">
     <h2>Iniciar sesión</h2>
 
@@ -36,12 +39,10 @@
 </main>
 
 
-  <div id="footer"></div>
+  <!-- <div id="footer"></div> -->
+<?php include __DIR__ . '/../public/components/footer.html'; ?>
 
-  <script src="../../../../static/js/main.js" defer></script>
-  <script src="../../../../static/js/navbar.js" defer></script>
-  <script src="../../../../static/js/login.js" defer></script>
-
+<script src="/Proyecto_PP_Dni_cultural/static/js/main.js"></script
 
 </body>
 

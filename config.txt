@@ -1,0 +1,3 @@
+CMD(administrador)
+
+mklink /D "C:\xampp" "C:\Users\Net\Documents\GitHub\Proyecto_PP_Dni_cultural"

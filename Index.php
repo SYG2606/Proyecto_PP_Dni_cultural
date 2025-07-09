@@ -7,14 +7,15 @@
 
   <title>DNI Cultural</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <link rel="stylesheet" href="../../../../static/css/main.css" />
+  <!-- <link rel="stylesheet" href="/static/css/main.css" /> -->
+  <link rel="stylesheet" href="/Proyecto_PP_Dni_cultural/static/css/main.css" />
 
 </head>
 
 <body>
 
-  <div id="navbar"></div>
-
+  <!-- <div id="navbar"></div> -->
+<?php include __DIR__ . '/src/views/pages/public/components/navbar.php'; ?>
   <main>
     <section class="hero">
       <div class="hero-text">
@@ -41,18 +42,18 @@
       </div>
       <div class="hero-image">
         <picture>
-          <source srcset="../../../../static/img/logo.jpg" type="image">
-          <img src="../../../../static/img/logo.jpg" alt="Casa Castro" loading="lazy" />
+          <source srcset="/Proyecto_PP_Dni_cultural/static/img/logo.jpg" type="image">
+          <img src="/Proyecto_PP_Dni_cultural/static/img/logo.jpg" alt="Casa Castro" />
         </picture>
       </div>
     </section>
   </main>
 
-  <div id="footer"></div>
-
-  <script src="../../../../static/js/main.js"></script>
+  <!-- <div id="footer"></div> -->
+<?php include __DIR__ . '/src/views/pages/public/components/footer.html'; ?>
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="../../../../static/js/navbar.js" defer></script>
+  <script src="/Proyecto_PP_Dni_cultural/static/js/navbar.js"></script>
+  <script src="/Proyecto_PP_Dni_cultural/static/js/main.js"></script>
 
 </body>
 
