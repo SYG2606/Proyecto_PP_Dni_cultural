@@ -14,7 +14,8 @@ try {
         provincia TEXT NOT NULL,
         municipio TEXT NOT NULL,
         email TEXT NOT NULL UNIQUE,
-        password TEXT NOT NULL
+        password TEXT NOT NULL,
+        rol TEXT NOT NULL DEFAULT 'usuario'
     )");
 
     // Crear tabla de intereses asociados a usuarios

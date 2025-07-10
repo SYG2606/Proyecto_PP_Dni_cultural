@@ -10,7 +10,7 @@ class Usuario {
         $stmt = $this->db->prepare("
             INSERT INTO usuarios (
                 nombre, apellido, fecha_nacimiento, genero,
-                pais, provincia, municipio, email, password, intereses
+                pais, provincia, municipio, email, password, rol
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ");
 
@@ -24,7 +24,12 @@ class Usuario {
             $datos['municipio'],
             trim($datos['email']),
             password_hash($datos['password'], PASSWORD_DEFAULT),
-            isset($datos['intereses']) ? implode(', ', (array)$datos['intereses']) : ''
+            isset($datos['rol']) ? $datos['rol'] : 'usuario'
         ]);
+    }
+
+    public function actualizarRol($usuarioId, $nuevoRol) {
+        $stmt = $this->db->prepare("UPDATE usuarios SET rol = ? WHERE id = ?");
+        return $stmt->execute([$nuevoRol, $usuarioId]);
     }
 }

@@ -18,7 +18,7 @@ class AuthController {
         ) {
             throw new Exception("Validación fallida. Revisá los campos.");
         }
-
+        // Si el rol no está presente, se asigna por defecto en el modelo
         return $this->usuario->registrar($post);
     }
 }
